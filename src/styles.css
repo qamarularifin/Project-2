@@ -1,120 +1,83 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700|Thasadith');
-
-
-/* color theme https://coolors.co/c5e0eb-919098-897c80-223843-a80874 */
-:root {
-  --modern-powder-blue: #C5E0EB;
-  --blue-greige: #919098;
-  --grape-putty: #897C80;
-  --royal-midnight: #223843;
-  --dark-fuchsia: #A80874;
-}
-
-
-
 body {
-  font-family: 'Thasadith', sans-serif;
-  margin: 0;
-  background: var
-}
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  background: var( --blue-greige);
-  color: var(--dark-fuchsia);
-  margin-top: 0;
-  padding: 1em;
-  width: 100%;
-}
-
-/* h2 {
-  transition-duration: 2s;
-  text-align: center;
-  width: 100%;
-  margin-top: 0;
-} */
-
-h2,h3, h4, h5 {
-  text-align: center;
-}
-
-form {
-  box-sizing: border-box;
-  flex-basis: 46%;
-  vertical-align: top;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  margin-right: 0;
-}
-
-ul {
-  padding: 0;
-}
-
-label {
-  flex-basis: 20%;
-}
-
-input[type="text"], textarea, input[type="number"] {
-  flex-basis: 68%;
-  margin: .2em;
-}
-
-input[type="submit"] {
-  flex-basis: 38%;
-  margin: 2em;
-  align-self: center;
-  padding: .5em;
-  font-family: 'Poppins', sans-serif;
-  background: var(--modern-powder-blue);
-}
-
-.MyShoppingCart {
-  margin-left: 20%;
+  margin: 0px;
+  padding: 0px;
+  background: rgb(200, 198, 216);
 }
 
 .App {
-  width : 100%;
+  text-align: center;
 }
 
-.products {
+.nav {
   display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+  /* padding: 0 20px; */
+  /* background-color: aquamarine; */
+  background: linear-gradient(
+    90deg,
+    rgb(110, 94, 254) 0%,
+    rgba(73, 63, 252, 1) 100%
+  );
+}
+
+.nav-item {
+  margin: 0 auto;
+  font-size: large;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-search {
+  font-size: large;
+  color: white;
+  font-weight: bold;
+}
+
+.bookimg,
+.bestbookimg {
+  /* height: 500;
+  width: 210px; */
+  max-width: 100%;
+  margin: 1rem;
+}
+
+.results-image,
+.bestseller-image {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bestseller-overall {
   justify-content: center;
 }
 
-.container > div {
-  width : 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.bestseller {
+  background-color: gray;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  width: 250px;
 }
 
-/* .preview {
-  flex-basis: 46%;
-  background: var(--blue-greige);
-  margin-right: .5em;
-} */
-/* .products, .cart {
-  flex-basis: 46%;
-  margin: .5em;
-} */
-
-li {
-  list-style: none;
-  padding: .3em;
-  text-align: center;
-  cursor: pointer;
+.best-over {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
 }
 
-li:nth-child(odd){
-  background: var(--grape-putty);
-  color: var(--modern-powder-blue);
+.bestseller:hover .best-over {
+  transform: translateY(0%);
 }

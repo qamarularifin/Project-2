@@ -4,7 +4,7 @@ import { BookContext } from '../contexts/dataContext'
 
 const BestSeller = () =>{
 
-    const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults} = useContext(BookContext)
+    const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen} = useContext(BookContext)
 
  
 
@@ -30,21 +30,47 @@ const BestSeller = () =>{
         }
 
         const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
+
+        const synopsisStyle ={
+            display: "flex",
+            backgroundColor: "orange",
+            // cursor: "pointer",
+           
+            
+
+        }
+
+        const toggleSynopsis = ()=>{
+                setIsOpen(!isOpen)
+            }
+           
      
 
         const imagesBest = searchBestResults.map((ele, i)=>{
             return(
-                <div key={i}>
-                    <p>{ele.title}</p>
-                    {/* <img className="bestbookimg" src={ele.book_image}  alt="" /> */}
+                <div className="bestseller" key={i}>
                     <img className="bestbookimg" src={ele === undefined ? fallBack : ele.book_image}  alt="" />
+                    <div className="best-book" style={synopsisStyle}>
+                         <h3>{ele.title}</h3>
+
+                         <div className="best-over">  
+                              {ele.description}</div>
+
+                    </div>
                     
                 </div>
             )
         })
 
+
+    //     <div className="collapsible">
+    //     <button className="toggle" onClick={()=>setIsOpen(!isOpen)}>Toggle</button>
+    //    { isOpen && <div className="content">Some content</div>  }
+    
+    // </div>
+
     return (
-        <div className="bestseller">
+        <div className="bestseller-overall">
             <h1>Best Seller</h1>
                  <div className="bestseller-image">
                          {imagesBest}

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Header = () =>{
+const Navigation = () =>{
     return (
      <div className="nav">
         <div className="nav-item"><Link to="/">Book Finder</Link></div>
@@ -19,5 +19,5 @@ const Header = () =>{
     )
 }
 
-export default Header;
+export default Navigation;
 

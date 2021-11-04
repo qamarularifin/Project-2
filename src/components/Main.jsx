@@ -13,10 +13,19 @@ const Main = () =>{
     const [searchTerm, setSearchTerm] = useState("")
     const [searchResults, setSearchResults] = useState([])
     const [searchBestResults, setSearchBestResults] = useState([])
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <div className="main">
-        <BookContext.Provider value={{searchTerm, setSearchTerm, searchResults, setSearchResults, searchBestResults, setSearchBestResults}}>
+        <BookContext.Provider value={
+            {searchTerm, setSearchTerm, 
+            searchResults, setSearchResults, 
+            searchBestResults, setSearchBestResults,
+            isOpen, setIsOpen
+            }
+            
+            
+            }>
             <Switch>
 
                 <Route exact path="/">

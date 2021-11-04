@@ -1,13 +1,15 @@
 import React from 'react'
-import Header from './components/Header'
+import Navigation from './components/Navigation'
 import Main from './components/Main'
+import Collapsible from './components/Collapsible'
 
 
 export default function App() {
     return (
         <div className="App">
-            <Header />
+            <Navigation />
             <Main />
+            <Collapsible />
         </div>
     )
 }

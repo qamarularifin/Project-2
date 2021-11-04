@@ -25,7 +25,7 @@ const SearchBox = () =>{
         setHasSearched(false)
         history.push("/results")
         
-         queryGoogleAPIBook()
+        queryGoogleAPIBook()
         
     }
 
