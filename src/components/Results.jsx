@@ -4,7 +4,7 @@ import { BookContext } from '../contexts/dataContext'
 
 const Results = () =>{
 
-const {searchTerm, searchResults} = useContext(BookContext)
+const {searchTerm, searchResults, fav, dispatchFav} = useContext(BookContext)
 console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
     
@@ -19,7 +19,14 @@ const images = searchResults.map((ele, i)=>{
                 {ele.searchInfo ? ele.searchInfo.textSnippet : ""}  </div>
 
             </div>
-            <button style={{cursor: "pointer"}}>Add to Fav</button>
+            <button style={{cursor: "pointer"}}
+            onClick={()=>{dispatchFav({type:"ADDTOFAV",
+            
+            payload: {book_image: ele.volumeInfo.imageLinks.thumbnail,
+                     title: ele.volumeInfo.title,
+                     description: ele.searchInfo.textSnippet}
+            
+            })}}>Add to Fav</button>
             
 
         </div>
