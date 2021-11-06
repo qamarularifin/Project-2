@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 
 const Search = (props) =>{
-    const {handleChange, handleSubmit} = props
+    const {handleChange, handleSubmit, disableSubmit} = props
     
  
     return(
@@ -12,7 +12,7 @@ const Search = (props) =>{
                 <div>
                     <label>Search</label>
                     <input type="text" placeholder="Enter a book" onChange={handleChange}/>
-                    <Link to="/results"> <button type="submit" onClick={handleSubmit}>Submit</button> </Link>
+                    <Link to="/results"> <button type="submit" onClick={handleSubmit} disabled={disableSubmit}>Submit</button> </Link>
                 </div>
          </form>
         </div>

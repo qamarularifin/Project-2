@@ -2,28 +2,31 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import Search from './Search'
 import Results from './Results'
 import { BookContext } from '../contexts/dataContext'
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
 const SearchBox = () =>{
 
-    const history = useHistory()
+    const navigate = useNavigate()
     const {searchTerm, setSearchTerm, searchResults, setSearchResults} = useContext(BookContext)
     const titleRef = useRef()
     const [hasSearched, setHasSearched] = useState(true)
+    const [disableSubmit, setDisableSubmit] = useState(true)
     
 
     const handleChange = (e) =>{
         const searchTerm = e.target.value
         console.log("handleChange: ", searchTerm)
         setSearchTerm(searchTerm)
+        !searchTerm ? setDisableSubmit(true) : setDisableSubmit(false)
+
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         console.log("handleSubmit: clicked" )
         setHasSearched(false)
-        history.push("/results")
+        navigate("/results")
         
         queryGoogleAPIBook()
         
@@ -60,7 +63,9 @@ const SearchBox = () =>{
                     setSearchTerm={setSearchTerm} 
                     titleRef={titleRef} 
                     handleSubmit={handleSubmit} 
-                    handleChange={handleChange}/>
+                    handleChange={handleChange}
+                    disableSubmit={disableSubmit}
+                    />
                 :
                 
                 <Results 

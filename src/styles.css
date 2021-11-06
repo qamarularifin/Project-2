@@ -1,7 +1,11 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: rgb(200, 198, 216);
+  background: linear-gradient(
+    90deg,
+    rgb(60, 54, 116) 0%,
+    rgb(195, 195, 216) 100%
+  );
 }
 
 .App {
@@ -16,11 +20,7 @@ body {
   height: 80px;
   /* padding: 0 20px; */
   /* background-color: aquamarine; */
-  background: linear-gradient(
-    90deg,
-    rgb(110, 94, 254) 0%,
-    rgba(73, 63, 252, 1) 100%
-  );
+  background: linear-gradient(90deg, rgb(89, 69, 218) 0%, rgb(59, 59, 63) 100%);
 }
 
 .nav-item {
@@ -40,25 +40,35 @@ body {
   font-weight: bold;
 }
 
-.bookimg,
-.bestbookimg {
+.book-img,
+.bestbook-img,
+.favbook-img {
   /* height: 500;
   width: 210px; */
   max-width: 100%;
   margin: 1rem;
 }
 
+img.bestbook-img,
+img.favbook-img {
+  width: 150px;
+}
+
 .results-image,
-.bestseller-image {
+.bestseller-image,
+.favourite-image {
   display: flex;
   flex-wrap: wrap;
 }
 
-.bestseller-overall {
+.bestseller-overall,
+.favourite-overall {
   justify-content: center;
 }
 
-.bestseller {
+.bestseller,
+.results,
+.favourite {
   background-color: gray;
   border-radius: 3px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -68,16 +78,21 @@ body {
   width: 250px;
 }
 
-.best-over {
+.best-over,
+.results-over,
+.fav-over {
   background-color: white;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  /* bottom: 0; */
   left: 0;
   right: 0;
-  transform: translateY(100%);
+  transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
 
-.bestseller:hover .best-over {
-  transform: translateY(0%);
+.bestseller:hover .best-over,
+.results:hover .results-over,
+.favourite:hover .fav-over {
+  transform: translateX(0%);
 }

@@ -1,12 +1,13 @@
-import React from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import React, {useState, useReducer} from 'react'
+import {Route, Routes, Navigate } from 'react-router-dom'
 import BestSeller from './BestSeller'
 import Home from './Home'
 import About from './About'
 import Favourite from './Favourite'
 import Results from './Results'
 import { BookContext } from '../contexts/dataContext'
-import {useState} from 'react'
+import favReducer from '../reducers/favReducer'
+
 
 const Main = () =>{
 
@@ -15,42 +16,31 @@ const Main = () =>{
     const [searchBestResults, setSearchBestResults] = useState([])
     const [isOpen, setIsOpen] = useState(false)
 
+    //reducer
+    const [fav, dispatchFav] = useReducer(favReducer, [])
+    console.log("fav", fav)
+
     return (
         <div className="main">
         <BookContext.Provider value={
             {searchTerm, setSearchTerm, 
             searchResults, setSearchResults, 
             searchBestResults, setSearchBestResults,
-            isOpen, setIsOpen
+            isOpen, setIsOpen,
+            fav, dispatchFav
             }
             
-            
             }>
-            <Switch>
 
-                <Route exact path="/">
-                    <Home/>
-                </Route>
-
-                <Route  path="/bestseller">
-                    <BestSeller />
-                </Route>
-
-                <Route  path="/favourite">
-                    <Favourite />
-                </Route>
-
-                <Route  path="/about">
-                    <About />
-                </Route>
-
-                <Route path="/results">
-                    <Results/>
-                </Route> 
-
-                <Redirect to="/" />
-
-             </Switch>
+            <Routes>
+                <Route  path="/" element={<Home/>} />  
+                <Route  path="/bestseller" element={<BestSeller />}/>
+                <Route  path="/favourite"   element={<Favourite />} />
+                <Route  path="/about" element={<About />} />
+                <Route path="/results" element={ <Results/>} />
+                <Route path="*" element={<Navigate to="/"/>} />
+                
+             </Routes>
         </BookContext.Provider>
         </div>
     )
