@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 
 const Favourite = () =>{
-    const {fav} = useContext(BookContext)
+    const {fav, dispatchFav} = useContext(BookContext)
     const favItem = fav.map((ele,i)=>{
         return(
             <div className="favourite" key={i}>
@@ -13,6 +13,7 @@ const Favourite = () =>{
 
                     <div className="fav-over">  
                         {ele.description}</div>
+                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: i})}}>Delete</button>
                         
                 </div>
 
