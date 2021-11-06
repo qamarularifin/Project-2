@@ -8,7 +8,6 @@ import Collapsible from './components/Collapsible'
 export default function App() {
     const [searchTerm, setSearchTerm] = useState("")
     const [searchResults, setSearchResults] = useState([])
-    const [hasSearched, setHasSearched] = useState(true)
     const [disableSubmit, setDisableSubmit] = useState(true)
 
     const queryGoogleAPIBook = async() =>{
@@ -35,8 +34,6 @@ export default function App() {
                         setSearchTerm={setSearchTerm}
                         searchResults={searchResults}
                         setSearchResults={setSearchResults}
-                        hasSearched={hasSearched}
-                        setHasSearched={setHasSearched}
                         disableSubmit={disableSubmit}
                         setDisableSubmit={setDisableSubmit}
                         queryGoogleAPIBook={queryGoogleAPIBook}

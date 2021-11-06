@@ -13,7 +13,6 @@ const Main = (props) =>{
 
     const {searchTerm, setSearchTerm, 
            searchResults, setSearchResults, 
-           hasSearched, setHasSearched, 
            disableSubmit, setDisableSubmit,
            queryGoogleAPIBook} = props
 
@@ -24,7 +23,6 @@ const Main = (props) =>{
     const [searchBestResults, setSearchBestResults] = useState([])
     const [isOpen, setIsOpen] = useState(false)
 
-    console.log("hasSearched", hasSearched)
 
     //reducer
     const [fav, dispatchFav] = useReducer(favReducer, [])
@@ -38,7 +36,6 @@ const Main = (props) =>{
             searchBestResults, setSearchBestResults,
             isOpen, setIsOpen,
             fav, dispatchFav,
-            hasSearched, setHasSearched,
             disableSubmit, setDisableSubmit,
             queryGoogleAPIBook
 
