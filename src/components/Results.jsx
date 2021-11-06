@@ -24,7 +24,7 @@ const images = searchResults.map((ele, i)=>{
             
             payload: {book_image: ele.volumeInfo.imageLinks.thumbnail,
                      title: ele.volumeInfo.title,
-                     description: ele.searchInfo.textSnippet}
+                     description: ele.searchInfo ? ele.searchInfo.textSnippet : ""}
             
             })}}>Add to Fav</button>
             
