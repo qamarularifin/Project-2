@@ -1,7 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
-
+import {Link} from 'react-router-dom'
+ 
 const Results = () =>{
 
 const {searchTerm, searchResults, fav, dispatchFav} = useContext(BookContext)
@@ -15,6 +16,7 @@ const images = searchResults.map((ele, i)=>{
            <img className="book-img" src={ ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail}  alt="" />
             <div className="results-book">
                  <h3>{ele.volumeInfo.title}</h3>
+                <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
                  <div className="results-over">  
                 {ele.searchInfo ? ele.searchInfo.textSnippet : ""}  </div>
 

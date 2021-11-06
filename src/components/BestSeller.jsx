@@ -44,7 +44,7 @@ const BestSeller = () =>{
                     <img className="bestbook-img" src={ele === undefined ? fallBack : ele.book_image}  alt="" />
                     <div className="best-book">
                          <h3 >{ele.title}</h3>
-
+                         <a target="_blank" href={ele.amazon_product_url}><button>More Info</button> </a>
                          <div className="best-over">  
                               {ele.description}</div>
                             
