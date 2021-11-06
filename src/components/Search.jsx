@@ -10,8 +10,8 @@ const Search = (props) =>{
         <div className="search">
             <form>
                 <div>
-                    <label>Search</label>
-                    <input type="text" placeholder="Enter a book" onChange={handleChange}/>
+                    <label></label>
+                    <input type="text" placeholder="Enter a book title" onChange={handleChange}/>
                     <Link to="/results"> <button type="submit" onClick={handleSubmit} disabled={disableSubmit}>Submit</button> </Link>
                 </div>
          </form>

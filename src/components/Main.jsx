@@ -9,12 +9,22 @@ import { BookContext } from '../contexts/dataContext'
 import favReducer from '../reducers/favReducer'
 
 
-const Main = () =>{
+const Main = (props) =>{
 
-    const [searchTerm, setSearchTerm] = useState("")
-    const [searchResults, setSearchResults] = useState([])
+    const {searchTerm, setSearchTerm, 
+           searchResults, setSearchResults, 
+           hasSearched, setHasSearched, 
+           disableSubmit, setDisableSubmit,
+           queryGoogleAPIBook} = props
+
+               
+
+    // const [searchTerm, setSearchTerm] = useState("")
+    // const [searchResults, setSearchResults] = useState([])
     const [searchBestResults, setSearchBestResults] = useState([])
     const [isOpen, setIsOpen] = useState(false)
+
+    console.log("hasSearched", hasSearched)
 
     //reducer
     const [fav, dispatchFav] = useReducer(favReducer, [])
@@ -27,7 +37,11 @@ const Main = () =>{
             searchResults, setSearchResults, 
             searchBestResults, setSearchBestResults,
             isOpen, setIsOpen,
-            fav, dispatchFav
+            fav, dispatchFav,
+            hasSearched, setHasSearched,
+            disableSubmit, setDisableSubmit,
+            queryGoogleAPIBook
+
             }
             
             }>
@@ -37,8 +51,8 @@ const Main = () =>{
                 <Route  path="/bestseller" element={<BestSeller />}/>
                 <Route  path="/favourite"   element={<Favourite />} />
                 <Route  path="/about" element={<About />} />
-                <Route path="/results" element={ <Results/>} />
-                <Route path="*" element={<Navigate to="/"/>} />
+                <Route  path="/results" element={ <Results/>} />
+                <Route  path="*" element={<Navigate to="/"/>} />
                 
              </Routes>
         </BookContext.Provider>
