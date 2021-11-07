@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 
 
-const Detail = () =>{
+const DetailBest = () =>{
     const {searchBestResults} = useContext(BookContext)
     const {detail} = useParams()
     console.log("dddd", detail)
@@ -36,4 +36,4 @@ const Detail = () =>{
     )
 }
 
-export default Detail
+export default DetailBest
