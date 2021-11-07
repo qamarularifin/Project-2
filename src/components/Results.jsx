@@ -30,6 +30,8 @@ const images = searchResults.map((ele, i)=>{
                             link: ele.volumeInfo.canonicalVolumeLink}
                     
                     })}}>Add to Fav</button>
+
+                    <Link to={"/bestseller/" + ele.id} ><button>Details</button></Link>
             </div>
            
             

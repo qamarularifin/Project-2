@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
+import {Link} from "react-router-dom"
 
 const BestSeller = () =>{
 
@@ -56,6 +57,8 @@ const BestSeller = () =>{
                                         link: ele.amazon_product_url}
                    
                                            })}} >Add to Fav</button>
+
+                              <Link to={"/bestseller/" + ele.title} ><button>Details</button></Link>
                     </div>
                    
                     
@@ -72,7 +75,7 @@ const BestSeller = () =>{
 
     return (
         <div className="bestseller-overall">
-            <h1>New York's Best Seller</h1>
+            <h1>New York Best Seller</h1>
                  <div className="bestseller-image">
                          {imagesBest}
                         

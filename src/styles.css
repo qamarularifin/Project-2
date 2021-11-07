@@ -95,7 +95,7 @@ img.book-img {
 .best-over,
 .results-over,
 .fav-over {
-  background-color: white;
+  background-color: rgba(182, 165, 165, 0.8);
   position: absolute;
   top: 0;
   /* bottom: 0; */

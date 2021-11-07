@@ -7,7 +7,7 @@ import Favourite from './Favourite'
 import Results from './Results'
 import { BookContext } from '../contexts/dataContext'
 import favReducer from '../reducers/favReducer'
-
+import Detail from './Detail'
 
 const Main = (props) =>{
 
@@ -54,7 +54,9 @@ const Main = (props) =>{
                 <Route  path="/about" element={<About />} />
                 <Route  path="/results" element={ <Results/>} />
                 <Route  path="*" element={<Navigate to="/"/>} />
-                
+                <Route path="/bestseller/:detail" element={<Detail/>} />
+                <Route path="/results/:detail" element={<Detail/>} />
+                <Route path="/favourite/:detail" element={<Detail/>} />
              </Routes>
         </BookContext.Provider>
         </div>
