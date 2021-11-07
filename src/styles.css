@@ -40,6 +40,10 @@ body {
   font-weight: bold;
 }
 
+/* .main {
+  margin-top: 300px;
+} */
+
 .book-img,
 .bestbook-img,
 .favbook-img {
@@ -62,8 +66,10 @@ img.favbook-img {
 }
 
 .bestseller-overall,
-.favourite-overall {
+.favourite-overall,
+.results-overall {
   justify-content: center;
+  margin-left: 100px;
 }
 
 .bestseller,

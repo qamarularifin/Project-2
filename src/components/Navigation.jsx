@@ -26,8 +26,8 @@ const Navigation = (props) =>{
 
     return (
      <div className="nav">
-        <div className="nav-item"><Link to="/">Book Finder</Link></div>
-         <div className="nav-item"><Link to="/bestseller">Best Seller</Link></div>
+        <div className="nav-item"><Link to="/">Google Book Finder</Link></div>
+         <div className="nav-item"><Link to="/bestseller">New York Best Seller</Link></div>
          <div className="nav-item"><Link to="/favourite">Favourite</Link></div>
          <div className="nav-item" ><Link to="/about" >About </Link> </div>
          

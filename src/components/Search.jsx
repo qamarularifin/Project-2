@@ -7,7 +7,6 @@ import { BookContext } from '../contexts/dataContext'
 const Search = (props) =>{
     const {handleChange, handleSubmit, disableSubmit} = props
     const {countRef, resultsCount, setResultsCount} = useContext(BookContext)
-    const [disableCount, setDisableCount] = useState(false)
     console.log("resultsCount", resultsCount)
 
  
