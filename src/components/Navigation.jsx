@@ -28,6 +28,7 @@ const Navigation = (props) =>{
      <div className="nav">
         <div className="nav-item"><Link to="/">Google Book Finder</Link></div>
          <div className="nav-item"><Link to="/bestseller">New York Best Seller</Link></div>
+         <div className="nav-item"><Link to="/results">Results</Link></div>
          <div className="nav-item"><Link to="/favourite">Favourite</Link></div>
          <div className="nav-item" ><Link to="/about" >About </Link> </div>
          
