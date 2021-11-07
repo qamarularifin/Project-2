@@ -8,6 +8,8 @@ const Results = () =>{
 const {searchTerm, searchResults, fav, dispatchFav} = useContext(BookContext)
 console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
+
+
     
 //Google books results
 const images = searchResults.map((ele, i)=>{
@@ -19,23 +21,23 @@ const images = searchResults.map((ele, i)=>{
                 <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
                  <div className="results-over">  
                 {ele.searchInfo ? ele.searchInfo.textSnippet : ""}  </div>
-
+                <button 
+                    onClick={()=>{dispatchFav({type:"ADDTOFAV",
+                    
+                    payload: {book_image: ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail,
+                            title: ele.volumeInfo.title,
+                            description: ele.searchInfo ? ele.searchInfo.textSnippet : "",
+                            link: ele.volumeInfo.canonicalVolumeLink}
+                    
+                    })}}>Add to Fav</button>
             </div>
-            <button style={{cursor: "pointer"}}
-            onClick={()=>{dispatchFav({type:"ADDTOFAV",
-            
-            payload: {book_image: ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail,
-                     title: ele.volumeInfo.title,
-                     description: ele.searchInfo ? ele.searchInfo.textSnippet : "",
-                     link: ele.volumeInfo.canonicalVolumeLink}
-            
-            })}}>Add to Fav</button>
+           
             
 
         </div>
     )
 })
-// {ele.searchInfo.textSnippet}
+
  
 
     return(
@@ -51,22 +53,6 @@ const images = searchResults.map((ele, i)=>{
 export default Results;
 
 
-
-// const imagesBest = searchBestResults.map((ele, i)=>{
-//     return(
-//         <div className="bestseller" key={i}>
-//             <img className="bestbookimg" src={ele === undefined ? fallBack : ele.book_image}  alt="" />
-//             <div className="best-book" style={synopsisStyle}>
-//                  <h3>{ele.title}</h3>
-
-//                  <div className="best-over">  
-//                       {ele.description}</div>
-
-//             </div>
-            
-//         </div>
-//     )
-// })
 
 
 // //     <div className="collapsible">

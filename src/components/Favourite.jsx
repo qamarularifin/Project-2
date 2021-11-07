@@ -13,7 +13,7 @@ const Favourite = () =>{
                     <a target="_blank" href={ele.link}><button>More Info</button> </a>
                     <div className="fav-over">  
                         {ele.description}</div>
-                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: i})}}>Delete</button>
+                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: i})}}>Remove</button>
                         
                 </div>
 
@@ -21,6 +21,15 @@ const Favourite = () =>{
             </div>
         )
     })
+
+
+    //local storage
+    const saveToLocalStorage = (items) =>{
+        localStorage.setItem('react-book-app-favourites', JSON.stringify(items))
+    }
+
+
+
     return (
         <div className="favourite-overall">
             <h1>Favourite</h1>
