@@ -12,7 +12,7 @@ const SearchBox = () =>{
         searchResults, setSearchResults, 
         disableSubmit, setDisableSubmit,
         queryGoogleAPIBook} = useContext(BookContext)
-    // const titleRef = useRef()
+        
      const [hasSearched, setHasSearched] = useState(true)
     // const [disableSubmit, setDisableSubmit] = useState(true)
 
@@ -67,7 +67,6 @@ const SearchBox = () =>{
             { hasSearched ? 
                 <Search searchTerm={searchTerm} 
                     setSearchTerm={setSearchTerm} 
-                    // titleRef={titleRef} 
                     handleSubmit={handleSubmit} 
                     handleChange={handleChange}
                     disableSubmit={disableSubmit}

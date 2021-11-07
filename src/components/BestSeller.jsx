@@ -74,7 +74,7 @@ const BestSeller = () =>{
 
     return (
         <div className="bestseller-overall">
-            <h1>Best Seller</h1>
+            <h1>New York's Best Seller</h1>
                  <div className="bestseller-image">
                          {imagesBest}
                         

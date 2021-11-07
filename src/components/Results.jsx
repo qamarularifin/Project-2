@@ -24,7 +24,7 @@ const images = searchResults.map((ele, i)=>{
             <button style={{cursor: "pointer"}}
             onClick={()=>{dispatchFav({type:"ADDTOFAV",
             
-            payload: {book_image: ele.volumeInfo.imageLinks.thumbnail,
+            payload: {book_image: ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail,
                      title: ele.volumeInfo.title,
                      description: ele.searchInfo ? ele.searchInfo.textSnippet : "",
                      link: ele.volumeInfo.canonicalVolumeLink}
