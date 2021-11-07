@@ -37,6 +37,7 @@ const Navigation = (props) =>{
                  <label></label>
                  <input type="text" placeholder="search" ref={titleRef} onChange={navHandleChange}/>
                  <Link to="/results"> <button type="submit" onClick={navHandleSubmit} disabled={disableSubmit}>Enter</button> </Link>
+                 
              </div>
          </form>
     </div>

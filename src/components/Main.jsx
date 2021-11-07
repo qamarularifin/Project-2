@@ -14,7 +14,9 @@ const Main = (props) =>{
     const {searchTerm, setSearchTerm, 
            searchResults, setSearchResults, 
            disableSubmit, setDisableSubmit,
-           queryGoogleAPIBook} = props
+           queryGoogleAPIBook,
+           countRef,
+           resultsCount, setResultsCount} = props
 
                
 
@@ -37,7 +39,9 @@ const Main = (props) =>{
             isOpen, setIsOpen,
             fav, dispatchFav,
             disableSubmit, setDisableSubmit,
-            queryGoogleAPIBook
+            queryGoogleAPIBook,
+            countRef,
+            resultsCount, setResultsCount
 
             }
             
