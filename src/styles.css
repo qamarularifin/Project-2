@@ -65,13 +65,16 @@ img.favbook-img {
 .favourite-image {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .bestseller-overall,
 .favourite-overall,
 .results-overall {
-  justify-content: center;
-  margin-left: 100px;
+  /* justify-content: center; */
+  margin: 0 auto;
+  /* display: flex; */
+  /* margin-left: 100px; */
 }
 
 .bestseller,
