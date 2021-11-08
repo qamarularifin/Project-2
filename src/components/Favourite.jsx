@@ -11,9 +11,10 @@ const Favourite = () =>{
                 <img className="favbook-img" src={ele === undefined ? "" : ele.book_image}  alt="" />
                 <div className="fav-book">
                     <h3 >{ele.title}</h3>
-                    <a target="_blank" href={ele.link}><button>More Info</button> </a>
+                    
                     <div className="fav-over">  
                         {ele.description}</div>
+                        <a target="_blank" href={ele.link}><button>More Info</button> </a>
                     <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: i})}}>Remove</button>
 
                     <Link to={"/favourite/" + ele.title} ><button>Details</button></Link>

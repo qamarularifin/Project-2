@@ -53,10 +53,11 @@ body {
   margin: 1rem;
 }
 
+img.book-img,
 img.bestbook-img,
-img.favbook-img,
-img.book-img {
+img.favbook-img {
   width: 150px;
+  height: 200px;
 }
 
 .results-image,
@@ -108,9 +109,10 @@ img.book-img {
 .bestseller:hover .best-over,
 .results:hover .results-over,
 .favourite:hover .fav-over {
-  transform: translateX(0%);
+  transform: translateX(0);
 }
 
 button {
+  position: relative;
   cursor: pointer;
 }

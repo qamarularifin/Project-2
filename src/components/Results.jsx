@@ -14,13 +14,17 @@ const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 //Google books results
 const images = searchResults.map((ele, i)=>{
     return(
+        
         <div className="results" key={i}>
+
+      
+
            <img className="book-img" src={ ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail}  alt="" />
             <div className="results-book">
                  <h3>{ele.volumeInfo.title}</h3>
+                 <div className="results-over">  {ele.volumeInfo ? ele.volumeInfo.description : ""}  </div>
                 <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
-                 <div className="results-over">  
-                {ele.volumeInfo ? ele.volumeInfo.description : ""}  </div>
+                 
                 <button 
                     onClick={()=>{dispatchFav({type:"ADDTOFAV",
                     
@@ -33,8 +37,11 @@ const images = searchResults.map((ele, i)=>{
                     })}}>Add to Fav</button>
 
                     <Link to={"/results/" + ele.id} ><button>Details</button></Link>
+
             </div>
            
+           
+            
             
 
         </div>
