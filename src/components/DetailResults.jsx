@@ -21,12 +21,12 @@ const DetailResults = () =>{
    
     return(
 
-        <div className="results">
-                 <img className="results-image" src={details[0].volumeInfo.imageLinks === undefined ? "" : details[0].volumeInfo.imageLinks.thumbnail}  alt="" />
+        <div className="details">
+                 <img className="details-img" src={details[0].volumeInfo.imageLinks === undefined ? "" : details[0].volumeInfo.imageLinks.thumbnail}  alt="" />
                     <div className="best-book">
-                        <h3 ></h3>
+                        
                         <a target="_blank" href={details[0].volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
-                        <div className="results-over">  
+                        <div className="best-over">  
                             {details[0].volumeInfo ? details[0].volumeInfo.description : ""}</div>
                             
                     </div>

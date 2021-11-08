@@ -116,3 +116,24 @@ button {
   position: relative;
   cursor: pointer;
 }
+
+.details {
+  background-color: rgba(83, 92, 95, 0.452);
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  /* margin: 7rem; */
+
+  width: 50%;
+  height: 750px;
+}
+
+.details-img {
+  /* display: flex;
+  flex-wrap: wrap; */
+  width: 300px;
+  height: 400px;
+}

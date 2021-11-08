@@ -21,8 +21,8 @@ const DetailFavourite = () =>{
    
     return(
 
-        <div className="favourite">
-                 <img className="favourite-image" src={details[0] === undefined ? "" : details[0].book_image}  alt="" />
+        <div className="details">
+                 <img className="details-img" src={details[0] === undefined ? "" : details[0].book_image}  alt="" />
                     <div className="best-book">
                         <h3 ></h3>
                         <a target="_blank" href={details[0].link}><button>More Info</button> </a>
