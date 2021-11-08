@@ -47,14 +47,16 @@ const BestSeller = () =>{
                          <h3 >{ele.title}</h3>
                          <a target="_blank" href={ele.amazon_product_url}><button>More Info</button> </a>
                          <div className="best-over">  
-                              {ele.description}</div>
+                              {ele.description}
+                        </div>
                               <button 
                                 onClick={()=>{dispatchFav({type:"ADDTOFAV", 
                                 
                                 payload: {book_image: ele.book_image,
                                         title: ele.title,
                                         description: ele.description,
-                                        link: ele.amazon_product_url}
+                                        link: ele.amazon_product_url,
+                                        unique: i}
                    
                                            })}} >Add to Fav</button>
 

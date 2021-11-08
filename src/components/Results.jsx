@@ -20,18 +20,19 @@ const images = searchResults.map((ele, i)=>{
                  <h3>{ele.volumeInfo.title}</h3>
                 <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
                  <div className="results-over">  
-                {ele.searchInfo ? ele.searchInfo.textSnippet : ""}  </div>
+                {ele.volumeInfo ? ele.volumeInfo.description : ""}  </div>
                 <button 
                     onClick={()=>{dispatchFav({type:"ADDTOFAV",
                     
                     payload: {book_image: ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail,
                             title: ele.volumeInfo.title,
-                            description: ele.searchInfo ? ele.searchInfo.textSnippet : "",
-                            link: ele.volumeInfo.canonicalVolumeLink}
+                            description: ele.volumeInfo ? ele.volumeInfo.description : "",
+                            link: ele.volumeInfo.canonicalVolumeLink,
+                            unique: i}
                     
                     })}}>Add to Fav</button>
 
-                    <Link to={"/bestseller/" + ele.id} ><button>Details</button></Link>
+                    <Link to={"/results/" + ele.id} ><button>Details</button></Link>
             </div>
            
             

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
+import {Link} from 'react-router-dom'
 
 const Favourite = () =>{
     const {fav, dispatchFav} = useContext(BookContext)
@@ -14,6 +15,8 @@ const Favourite = () =>{
                     <div className="fav-over">  
                         {ele.description}</div>
                     <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: i})}}>Remove</button>
+
+                    <Link to={"/favourite/" + ele.title} ><button>Details</button></Link>
                         
                 </div>
 
