@@ -55,8 +55,8 @@ const BestSeller = () =>{
                                 payload: {book_image: ele.book_image,
                                         title: ele.title,
                                         description: ele.description,
-                                        link: ele.amazon_product_url,
-                                        unique: i}
+                                        link: ele.amazon_product_url
+                                        }
                    
                                            })}} >Add to Fav</button>
 

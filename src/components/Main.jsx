@@ -30,12 +30,12 @@ const Main = (props) =>{
 
     //reducer with local storage
     const [fav, dispatchFav] = useReducer(favReducer, [], ()=>{
-        const localData = localStorage.getItem("react-book-app-favourites");
+        const localData = localStorage.getItem("book-finder-app-favourites");
         return localData ? JSON.parse(localData) : []
     });
 
     useEffect(() => {
-        localStorage.setItem('react-book-app-favourites', JSON.stringify(fav))
+        localStorage.setItem('book-finder-app-favourites', JSON.stringify(fav))
     }, [fav])
 
 

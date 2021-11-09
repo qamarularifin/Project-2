@@ -27,12 +27,7 @@ const Favourite = () =>{
     })
 
 
-    //local storage
-    const saveToLocalStorage = (items) =>{
-        localStorage.setItem('react-book-app-favourites', JSON.stringify(items))
-    }
-    saveToLocalStorage(fav)
-
+    
 
 
     return (
