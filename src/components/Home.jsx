@@ -8,8 +8,8 @@ const Home = () =>{
 
     
     return(
-        <div>
-            <h1>Find Your Book</h1>
+        <div className="home-overall">
+            <h1 className="home-h1">Find Your Book</h1>
                 <SearchBox />
         </div>
     )
