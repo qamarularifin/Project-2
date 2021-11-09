@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react'
+import React, {useState, useReducer, useEffect} from 'react'
 import {Route, Routes, Navigate } from 'react-router-dom'
 import BestSeller from './BestSeller'
 import Home from './Home'
@@ -28,8 +28,17 @@ const Main = (props) =>{
     const [isOpen, setIsOpen] = useState(false)
 
 
-    //reducer
-    const [fav, dispatchFav] = useReducer(favReducer, [])
+    //reducer with local storage
+    const [fav, dispatchFav] = useReducer(favReducer, [], ()=>{
+        const localData = localStorage.getItem("react-book-app-favourites");
+        return localData ? JSON.parse(localData) : []
+    });
+
+    useEffect(() => {
+        localStorage.setItem('react-book-app-favourites', JSON.stringify(fav))
+    }, [fav])
+
+
     console.log("fav", fav)
 
     return (
