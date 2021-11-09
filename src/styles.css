@@ -160,3 +160,10 @@ button {
   width: 300px;
   height: 400px;
 }
+
+.details-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+}

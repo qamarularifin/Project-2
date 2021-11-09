@@ -31,7 +31,8 @@ const images = searchResults.map((ele, i)=>{
                     payload: {book_image: ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail,
                             title: ele.volumeInfo.title,
                             description: ele.volumeInfo ? ele.volumeInfo.description : "",
-                            link: ele.volumeInfo.canonicalVolumeLink
+                            link: ele.volumeInfo.canonicalVolumeLink,
+                            author: ele.volumeInfo ? ele.volumeInfo.authors[0] : ""
                             }
                     
                     })}}>Add to Fav</button>
