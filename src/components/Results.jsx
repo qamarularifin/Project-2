@@ -2,11 +2,13 @@ import React from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
+import Filter from './Filter'
+
  
 const Results = () =>{
 
-const {searchTerm, searchResults, fav, dispatchFav} = useContext(BookContext)
-console.log("searchResults: ", searchResults)
+const {searchTerm, searchResults, setSearchResults, fav, dispatchFav} = useContext(BookContext)
+//console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
 
@@ -54,6 +56,9 @@ const images = searchResults.map((ele, i)=>{
     return(
         <div className="results-overall">
             <h1>Results </h1>
+                     {/* <Filter 
+                        searchResults={searchResults}
+                        setSearchResults={setSearchResults} /> */}
                  <div className="results-image">
                  {images}
              </div>

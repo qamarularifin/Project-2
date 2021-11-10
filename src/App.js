@@ -22,7 +22,8 @@ export default function App() {
         //const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`) //newyork best sellers
         const data = await response.json()
         setSearchResults(data.items)
-        console.log(data.items)
+
+        // console.log(data.items)
         }  
         catch (error){
             console.log(error)
@@ -49,6 +50,9 @@ export default function App() {
                         countRef={countRef}
                         resultsCount={resultsCount}
                         setResultsCount={setResultsCount}
+
+                     
+                      
                       
                         />
             {/* <Collapsible /> */}
