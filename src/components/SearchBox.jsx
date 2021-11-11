@@ -32,8 +32,7 @@ const SearchBox = () =>{
         e.preventDefault()
         console.log("handleSubmit: clicked" )
         setHasSearched(false)
-        navigate("/results")
-        
+        navigate("/results")  
         queryGoogleAPIBook()
         
     }

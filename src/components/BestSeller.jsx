@@ -1,11 +1,13 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from "react-router-dom"
+import { getQueriesForElement } from '@testing-library/dom'
 
 const BestSeller = () =>{
 
     const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen, fav, dispatchFav} = useContext(BookContext)
+   
 
     console.log("best-results: ", searchBestResults)
  
@@ -49,17 +51,27 @@ const BestSeller = () =>{
                          <div className="best-over">  
                               {ele.description}
                         </div>
-                              <button 
-                                onClick={()=>{dispatchFav({type:"ADDTOFAV", 
+                        {
+                            fav.some((p)=>p.title===ele.title)?
+                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.title})}}>Remove</button>
+                            :
+                            
+                            <button style={{backgroundColor: "green"}}
+                                onClick={()=>{
+       
+                                    dispatchFav({type:"ADDTOFAV", 
                                 
                                 payload: {book_image: ele.book_image,
                                         title: ele.title,
                                         description: ele.description,
                                         link: ele.amazon_product_url,
                                         author: ele.author
+                                        
                                         }
                    
                                            })}} >Add to Fav</button>
+                        }
+                             
 
                               <Link to={"/bestseller/" + ele.title} ><button>Details</button></Link>
                     </div>

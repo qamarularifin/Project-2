@@ -6,7 +6,7 @@ const favReducer = (state, action) =>{
             return [action.payload,
                     ...state]
         case "REMOVEFROMFAV":
-            const filtered = state.filter((ele,i)=> i !== action.payload)
+            const filtered = state.filter((ele,i)=> ele.title !== action.payload)
             return filtered
         default:
             return state

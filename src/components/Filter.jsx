@@ -1,56 +1,56 @@
-import React, {useState, useEffect} from 'react'
-import { useContext } from 'react'
-import { BookContext } from '../contexts/dataContext'
+// import React, {useState, useEffect} from 'react'
+// import { useContext } from 'react'
+// import { BookContext } from '../contexts/dataContext'
 
-import Button from './Button'
+// import Button from './Button'
 
 
 
-const Filter = (props) => {
-    const {searchResults, setSearchResults} = props
+// const Filter = (props) => {
+//     const {searchResults, setSearchResults} = props
 
    
     
-    const [resultsItem, setResultsItem] = useState(searchResults) 
+//     const [resultsItem, setResultsItem] = useState(searchResults) 
 
-    const allCategories = ['All', ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : undefined))]
-    // const [buttons, setButtons] = useState(allCategories)
-    console.log("searchResults", searchResults)
-    console.log("resultsItem", resultsItem)
-
-
-    console.log("allCategories", allCategories)
-    //console.log("buttons", buttons)
+//     const allCategories = ['All', ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : undefined))]
+//     // const [buttons, setButtons] = useState(allCategories)
+//     console.log("searchResults", searchResults)
+//     console.log("resultsItem", resultsItem)
 
 
-        const filter = (button) =>{
+//     console.log("allCategories", allCategories)
+//     //console.log("buttons", buttons)
 
-            if (button === "All"){
-                setSearchResults(resultsItem)
-                return
-            }
+
+//         const filter = (button) =>{
+
+//             if (button === "All"){
+//                 setSearchResults(resultsItem)
+//                 return
+//             }
     
           
-            const filteredData = searchResults.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined)
-            console.log("filtereddata", filteredData)
-            setSearchResults(filteredData)
+//             const filteredData = searchResults.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined)
+//             console.log("filtereddata", filteredData)
+//             setSearchResults(filteredData)
           
     
-        }
+//         }
       
 
-    return (
+//     return (
    
-        <div>
+//         <div>
             
-        <Button 
-            filter={filter}
-            buttons={allCategories}
-            />
-          </div>
+//         <Button 
+//             filter={filter}
+//             buttons={allCategories}
+//             />
+//           </div>
 
     
-    )
-}
+//     )
+// }
 
-export default Filter
+// export default Filter
