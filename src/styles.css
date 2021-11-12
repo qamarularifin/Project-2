@@ -3,7 +3,7 @@ body {
   padding: 0px;
   background: linear-gradient(
     90deg,
-    rgb(44, 41, 70) 0%,
+    rgb(87, 44, 44) 0%,
     rgb(195, 195, 216) 100%
   );
 }
@@ -102,7 +102,7 @@ img.favbook-img {
 }
 
 .carousel {
-  background-color: grey;
+  background-color: rgb(51, 49, 49);
   height: 16.75em;
 }
 

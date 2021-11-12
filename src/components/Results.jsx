@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
-// import Filter from './Filter'
+import Filter from './Filter'
 
  
 const Results = () =>{
@@ -96,20 +96,6 @@ export default Results;
 // //    { isOpen && <div className="content">Some content</div>  }
 
 // // </div>
-
-// return (
-// <div className="bestseller-overall">
-//     <h1>Best Seller</h1>
-//          <div className="bestseller-image">
-//                  {imagesBest}
-                
-
-//         </div>
-// </div>
-// )
-// }
-
-
 
 
 

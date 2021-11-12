@@ -1,19 +1,19 @@
-// import React from 'react'
+import React from 'react'
 
-// const Button = (props) => {
-//     const {buttons, filter} = props
+const Button = (props) => {
+    const {buttons, filter} = props
     
-//     return (
-//         <div>
-//             {
-//                 buttons.map((cat, i) =>{
-//                     return (
-//                         <button key={i} type="button" onClick={()=>filter(cat)}>{cat}</button>
-//                     )
-//                 })
-//             }
-//         </div>
-//     )
-// }
+    return (
+        <div>
+            {
+                buttons.map((cat, i) =>{
+                    return (
+                        <button key={i} type="button" onClick={()=>filter(cat)}>{cat}</button>
+                    )
+                })
+            }
+        </div>
+    )
+}
 
-// export default Button
+export default Button

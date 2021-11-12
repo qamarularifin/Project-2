@@ -33,7 +33,8 @@ const Navigation = (props) =>{
          <div className="nav-item"><Link to="/results">Results</Link></div>
          <div className="nav-item"><Link to="/favourite">Favourite</Link></div>
          <div className="nav-item" ><Link to="/about" >About </Link> </div>
-         
+
+      
          
          <form>
              <div className="nav-search">
