@@ -18,7 +18,8 @@ const Main = (props) =>{
            disableSubmit, setDisableSubmit,
            queryGoogleAPIBook,
            countRef,
-           resultsCount, setResultsCount
+           resultsCount, setResultsCount,
+           queryGoogleAPIBookOthers
           } = props
 
                
@@ -53,7 +54,8 @@ const Main = (props) =>{
             disableSubmit, setDisableSubmit,
             queryGoogleAPIBook,
             countRef,
-            resultsCount, setResultsCount
+            resultsCount, setResultsCount,
+            queryGoogleAPIBookOthers
            
 
             }

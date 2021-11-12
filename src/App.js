@@ -11,6 +11,9 @@ export default function App() {
     const [disableSubmit, setDisableSubmit] = useState(true)
     const [resultsCount, setResultsCount] = useState(10)
 
+    //search by author
+    const [searchOthers, setSearchOthers] = useState([])
+
     const countRef = useRef()
 
     const queryGoogleAPIBook = async() =>{
@@ -30,6 +33,28 @@ export default function App() {
         }
     }
 
+
+    const queryGoogleAPIBookOthers = async() =>{
+
+        try{
+        // Google Book apiKey
+        const apiKey = 'AIzaSyDeqdtT7Yzm3EyJeWrqZfVoWcITn2Mohj8' 
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${searchTerm}&maxResults=${resultsCount}`)
+        const data = await response.json()
+        setSearchResults(data.items)
+
+        console.log(data.items)
+        }  
+        catch (error){
+            console.log(error)
+        }
+    }
+
+   
+
+
+
+
     return (
         <div className="App">
             <Navigation searchTerm={searchTerm}
@@ -37,6 +62,7 @@ export default function App() {
                         disableSubmit={disableSubmit}
                         setDisableSubmit={setDisableSubmit}
                         queryGoogleAPIBook={queryGoogleAPIBook}
+                        setSearchResults={setSearchResults}
 
             />
   
@@ -50,6 +76,8 @@ export default function App() {
                         countRef={countRef}
                         resultsCount={resultsCount}
                         setResultsCount={setResultsCount}
+
+                        queryGoogleAPIBookOthers={queryGoogleAPIBookOthers}
 
                      
                       

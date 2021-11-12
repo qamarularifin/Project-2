@@ -6,14 +6,16 @@ import {useNavigate} from 'react-router-dom'
 const Navigation = (props) =>{
     const {searchTerm, setSearchTerm, 
            disableSubmit, setDisableSubmit,
-           queryGoogleAPIBook} = props
+           queryGoogleAPIBook, setSearchResults} = props
     
     const titleRef = useRef()
     const navigate = useNavigate()
 
     const navHandleChange = () =>{
         const searchTerm = titleRef.current.value
-        setSearchTerm(searchTerm)
+
+        searchTerm ? setSearchTerm(searchTerm) : setSearchResults([])
+        // setSearchTerm(searchTerm)
         !searchTerm ? setDisableSubmit(true) : setDisableSubmit(false)
     }
 

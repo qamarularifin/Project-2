@@ -44,10 +44,11 @@ body {
   font-size: large;
   color: white;
   font-weight: bold;
+  margin-right: 1.5em;
 }
 
 /* .main {
-  margin-top: 300px;
+  
 } */
 
 .book-img,
@@ -86,14 +87,23 @@ img.favbook-img {
 }
 
 .home-overall {
-  padding-top: 320px;
+  background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1590&q=80");
+  background-size: cover;
+  padding-top: 280px;
   font-style: bold;
+  color: white;
+  font-size: 150%;
   font-family: cursive;
   margin: 0 auto;
 }
 
 .search {
   margin-top: 2em;
+}
+
+.carousel {
+  background-color: grey;
+  height: 16.75em;
 }
 
 .bestseller,
@@ -166,4 +176,8 @@ button {
   right: 0;
   top: 0;
   left: 0;
+}
+
+.results-empty {
+  color: white;
 }

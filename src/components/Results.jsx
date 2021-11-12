@@ -72,6 +72,7 @@ const images = searchResults.filter((ele)=>{
     return(
         <div className="results-overall">
             <h1>Results </h1>
+               <div className="results-empty"> {!searchTerm && <h2>Results is Empty!</h2>} </div>
                      {/* <Filter 
                         searchResults={searchResults}
                         setSearchResults={setSearchResults} /> */}

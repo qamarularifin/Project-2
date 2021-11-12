@@ -11,7 +11,7 @@ const SearchBox = () =>{
     const {searchTerm, setSearchTerm, 
         searchResults, setSearchResults, 
         disableSubmit, setDisableSubmit,
-        queryGoogleAPIBook} = useContext(BookContext)
+        queryGoogleAPIBook, queryGoogleAPIBookOthers} = useContext(BookContext)
         
      const [hasSearched, setHasSearched] = useState(true)
     // const [disableSubmit, setDisableSubmit] = useState(true)
@@ -35,33 +35,30 @@ const SearchBox = () =>{
         navigate("/results")  
         queryGoogleAPIBook()
         
+        
     }
 
-    // useEffect(()=>{
-    //      queryGoogleAPIBook()
-     
-    // }, [searchTerm])
+    const handleSubmitOthers = (e) =>{
+        e.preventDefault()
+        console.log("handleSubmit: clicked" )
+        setHasSearched(false)
+        navigate("/results")  
+        
+        queryGoogleAPIBookOthers()
+        
+    }
+
 
     // const handleSubmit =() => {
     //     const search = titleSearch.current.value.replace(/\s/, "+")
     //     callApi(search)
     // }
 
-    // Google Books API Call
-    // const queryGoogleAPIBook = async() =>{
-    //     // Google Book apiKey
-    //     const apiKey = 'AIzaSyDeqdtT7Yzm3EyJeWrqZfVoWcITn2Mohj8' 
-    //     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${apiKey}&maxResults=20`)
-    //     //const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`) //newyork best sellers
-    //     const data = await response.json()
-    //     setSearchResults(data.items)
-    //     console.log(data.items)
-    // }
-
 
 
     return(
         <div className="search-box">
+            
       
             { hasSearched ? 
                 <Search searchTerm={searchTerm} 
@@ -69,10 +66,12 @@ const SearchBox = () =>{
                     handleSubmit={handleSubmit} 
                     handleChange={handleChange}
                     disableSubmit={disableSubmit}
+                    handleSubmitOthers={handleSubmitOthers}
                     />
                 :
                 
                 <Results 
+                    
                     searchTerm={searchTerm}
                     searchResults={searchResults}
                 />  

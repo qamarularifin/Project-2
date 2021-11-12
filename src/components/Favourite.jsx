@@ -33,6 +33,7 @@ const Favourite = () =>{
     return (
         <div className="favourite-overall">
             <h1>Favourite</h1>
+                <div className="fav-empty">{fav ? "" :  <h1>Favourites is Empty!</h1>}</div>
                  <div className="favourite-image">
                          {favItem}
                         
