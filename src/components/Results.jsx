@@ -38,8 +38,8 @@ const images = searchResults.filter((ele)=>{
                         <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
                     {
     
-                        fav.some((p)=>p.title=== ele.volumeInfo.title)?
-                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.volumeInfo.title})}}>Remove</button>
+                        fav.some((p)=>p.id=== ele.id)?
+                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</button>
                             :
                             
                             <button style={{backgroundColor: "green"}}
@@ -52,7 +52,8 @@ const images = searchResults.filter((ele)=>{
                                     title: ele.volumeInfo ? ele.volumeInfo.title : "",
                                     description: ele.volumeInfo ? ele.volumeInfo.description : "",
                                     link: ele.volumeInfo.canonicalVolumeLink,
-                                    author: ele.volumeInfo.authors ? ele.volumeInfo.authors[0] : ""
+                                    author: ele.volumeInfo.authors ? ele.volumeInfo.authors[0] : "",
+                                    id: ele.id
                     
                                           }
     

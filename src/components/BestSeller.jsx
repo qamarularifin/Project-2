@@ -52,8 +52,8 @@ const BestSeller = () =>{
                               {ele.description}
                         </div>
                         {
-                            fav.some((p)=>p.title===ele.title)?
-                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.title})}}>Remove</button>
+                            fav.some((p)=>p.id===ele.rank)?
+                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.rank})}}>Remove</button>
                             :
                             
                             <button style={{backgroundColor: "green"}}
@@ -65,7 +65,8 @@ const BestSeller = () =>{
                                         title: ele.title,
                                         description: ele.description,
                                         link: ele.amazon_product_url,
-                                        author: ele.author
+                                        author: ele.author,
+                                        id: ele.rank
                                         
                                         }
                    

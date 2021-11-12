@@ -15,7 +15,7 @@ const Favourite = () =>{
                     <div className="fav-over">  
                         {ele.description}</div>
                         <a target="_blank" href={ele.link}><button>More Info</button> </a>
-                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.title})}}>Remove</button>
+                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</button>
 
                     <Link to={"/favourite/" + ele.title} ><button>Details</button></Link>
                         
