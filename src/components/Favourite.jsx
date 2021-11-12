@@ -27,18 +27,18 @@ const Favourite = () =>{
     })
 
 
-    
+    console.log("lllll", fav.length)
 
 
     return (
         <div className="favourite-overall">
             <h1>Favourite</h1>
-                <div className="fav-empty">{fav ? "" :  <h1>Favourites is Empty!</h1>}</div>
+             
                  <div className="favourite-image">
-                         {favItem}
-                        
-
+                         {/* {favItem} */}
+                         {favItem.length < 1 ?  <h1 className="fav-empty">Favourite is Empty!</h1> : favItem}
                 </div>
+                
         </div>
 
 

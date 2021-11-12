@@ -14,8 +14,8 @@ const Navigation = (props) =>{
     const navHandleChange = () =>{
         const searchTerm = titleRef.current.value
 
-        searchTerm ? setSearchTerm(searchTerm) : setSearchResults([])
-        // setSearchTerm(searchTerm)
+        // searchTerm ? setSearchTerm(searchTerm) : setSearchResults([])
+        setSearchTerm(searchTerm)
         !searchTerm ? setDisableSubmit(true) : setDisableSubmit(false)
     }
 

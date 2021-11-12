@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
@@ -12,11 +12,13 @@ console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
 
+
     
 //Google books results
 const images = searchResults.filter((ele)=>{
 
     if (searchTerm === ""){
+        
         return ele
     } else if( ele.volumeInfo.title.toLowerCase().includes(searchTerm.toLowerCase())) {
         return ele
@@ -72,13 +74,14 @@ const images = searchResults.filter((ele)=>{
     return(
         <div className="results-overall">
             <h1>Results </h1>
-               <div className="results-empty"> {!searchTerm && <h2>Results is Empty!</h2>} </div>
+               
                      {/* <Filter 
                         searchResults={searchResults}
                         setSearchResults={setSearchResults} /> */}
                  <div className="results-image">
-                 {images}
+                      {images.length < 1 ? <h1 className="results-empty">Results is Empty!</h1> : images} 
              </div>
+             
         </div>
     )
 }

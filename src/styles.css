@@ -180,4 +180,10 @@ button {
 
 .results-empty {
   color: white;
+  margin-top: 8em;
+}
+
+.fav-empty {
+  color: white;
+  margin-top: 8em;
 }
