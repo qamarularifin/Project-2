@@ -5,6 +5,7 @@ import Collapsible from './components/Collapsible'
 
 
 
+
 export default function App() {
     const [searchTerm, setSearchTerm] = useState("")
     const [searchResults, setSearchResults] = useState([])
