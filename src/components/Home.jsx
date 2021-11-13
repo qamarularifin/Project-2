@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useState} from 'react'
 import SearchBox from './SearchBox'
+import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 
 //Carousel
@@ -17,9 +18,35 @@ const breakPoints = [
   ];
 
 
-const Home = () =>{
+const Home = (props) =>{
 
+    const {searchBestResults, setSearchBestResults} = useContext(BookContext)
     
+    console.log("xxxxx", searchBestResults)
+
+
+    useEffect(() => {
+        queryAPIBookBest()
+   
+    }, [])
+
+        // New York Bestsellers API call
+        const queryAPIBookBest = async() =>{
+
+            try{
+            const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
+            const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
+            const data = await response.json()
+            //console.log(data.results.books)
+            setSearchBestResults(data.results.books)
+            }
+            catch (error){
+                console.log(error)
+            }
+           
+        }
+
+
     return(
    
         <div className="home-overall">
@@ -28,19 +55,16 @@ const Home = () =>{
 
             <div className="carousel">
                 <h2>Best Seller</h2>
-          
-                            <div className="App">
-                                <Carousel breakPoints={breakPoints}>
-                                <Item>One</Item>
-                                <Item>Two</Item>
-                                <Item>Three</Item>
-                                <Item>Four</Item>
-                                <Item>Five</Item>
-                                <Item>Six</Item>
-                                <Item>Seven</Item>
-                                <Item>Eight</Item>
-                                </Carousel>
-                            </div>
+
+                        <div className="App">
+                            <Carousel breakPoints={breakPoints}>
+
+                                {searchBestResults.map((item,i) =>
+                                    <Item key={i}><img key={i} style={{width: "1.6em"}} src={item.book_image} alt="" /></Item> )} 
+                            </Carousel>
+
+                        </div>
+        
             </div>
 
                 

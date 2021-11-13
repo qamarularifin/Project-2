@@ -3,11 +3,12 @@ import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
+import Button from './Button'
 
  
 const Results = () =>{
 
-const {searchTerm, searchResults, setSearchResults, fav, dispatchFav} = useContext(BookContext)
+const {searchTerm, searchResults, setSearchResults, fav, dispatchFav, filterTitle, buttons} = useContext(BookContext)
 console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
@@ -75,6 +76,11 @@ const images = searchResults.filter((ele)=>{
     return(
         <div className="results-overall">
             <h1>Results </h1>
+
+            <Button 
+                filterTitle={filterTitle}
+                buttons={buttons}
+                />
                
                      {/* <Filter 
                         searchResults={searchResults}

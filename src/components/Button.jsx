@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Button = (props) => {
-    const {buttons, filter} = props
+    const {buttons, filterTitle} = props
     
     return (
         <div>
             {
                 buttons.map((cat, i) =>{
                     return (
-                        <button key={i} type="button" onClick={()=>filter(cat)}>{cat}</button>
+                        <button key={i} type="button" onClick={()=>filterTitle(cat)}>{cat}</button>
                     )
                 })
             }

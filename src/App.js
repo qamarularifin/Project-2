@@ -1,7 +1,9 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import Navigation from './components/Navigation'
 import Main from './components/Main'
 import Collapsible from './components/Collapsible'
+
+
 
 
 
@@ -11,6 +13,32 @@ export default function App() {
     const [searchResults, setSearchResults] = useState([])
     const [disableSubmit, setDisableSubmit] = useState(true)
     const [resultsCount, setResultsCount] = useState(10)
+
+    
+    //filter
+    // const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories[0]))]
+    const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : ""))]
+  
+
+    const[buttons, setButtons] = useState(allCategories)
+   
+
+    // useEffect(() => {
+    //     setButtons(allCategories)
+    // }, [])
+    
+    console.log("searchResults", searchResults)
+    console.log("allcategories", allCategories)
+    console.log("buttons", buttons)
+    
+    const filterTitle = (button) =>{
+        if(button === "All"){
+            setSearchResults(searchResults)
+            return
+        }
+        const filteredData = searchResults.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined )
+        setSearchResults(filteredData)
+    }
 
     //search by author
     const [searchOthers, setSearchOthers] = useState([])
@@ -80,10 +108,12 @@ export default function App() {
 
                         queryGoogleAPIBookOthers={queryGoogleAPIBookOthers}
 
-                     
-                      
-                      
+                        buttons={buttons}
+                        filterTitle={filterTitle}
+
                         />
+
+            
             {/* <Collapsible /> */}
         </div>
     )

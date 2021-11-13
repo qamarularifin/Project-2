@@ -19,7 +19,8 @@ const Main = (props) =>{
            queryGoogleAPIBook,
            countRef,
            resultsCount, setResultsCount,
-           queryGoogleAPIBookOthers
+           queryGoogleAPIBookOthers,
+           buttons, filterTitle
           } = props
 
                
@@ -55,7 +56,8 @@ const Main = (props) =>{
             queryGoogleAPIBook,
             countRef,
             resultsCount, setResultsCount,
-            queryGoogleAPIBookOthers
+            queryGoogleAPIBookOthers,
+            buttons, filterTitle
            
 
             }
@@ -68,10 +70,11 @@ const Main = (props) =>{
                 <Route  path="/favourite"   element={<Favourite />} />
                 <Route  path="/about" element={<About />} />
                 <Route  path="/results" element={ <Results/>} />
-                <Route  path="*" element={<Navigate to="/"/>} />
+                
                 <Route path="/bestseller/:detail" element={<DetailBest/>} />
                 <Route path="/results/:detail" element={<DetailResults/>} />
                 <Route path="/favourite/:detail" element={<DetailFavourite/>} />
+                <Route  path="*" element={<Navigate to="/"/>} />
              </Routes>
         </BookContext.Provider>
         </div>

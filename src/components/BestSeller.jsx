@@ -4,33 +4,33 @@ import { BookContext } from '../contexts/dataContext'
 import {Link} from "react-router-dom"
 import { getQueriesForElement } from '@testing-library/dom'
 
-const BestSeller = () =>{
+const BestSeller = (props) =>{
 
     const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen, fav, dispatchFav} = useContext(BookContext)
-   
+    
 
-    console.log("best-results: ", searchBestResults)
+     console.log("best-results: ", searchBestResults)
  
-    useEffect(() => {
-        queryAPIBookBest()
+    // useEffect(() => {
+    //     queryAPIBookBest()
    
-    }, [])
+    // }, [])
 
-        // New York Bestsellers API call
-        const queryAPIBookBest = async() =>{
+    //     // New York Bestsellers API call
+    //     const queryAPIBookBest = async() =>{
 
-            try{
-            const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
-            const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
-            const data = await response.json()
-            //console.log(data.results.books)
-            setSearchBestResults(data.results.books)
-            }
-            catch (error){
-                console.log(error)
-            }
+    //         try{
+    //         const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
+    //         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
+    //         const data = await response.json()
+    //         //console.log(data.results.books)
+    //         setSearchBestResults(data.results.books)
+    //         }
+    //         catch (error){
+    //             console.log(error)
+    //         }
            
-        }
+    //     }
 
         const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
