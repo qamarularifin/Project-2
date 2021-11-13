@@ -42,8 +42,6 @@ const Main = (props) =>{
     }, [fav])
 
 
-    console.log("fav", fav)
-
     return (
         <div className="main">
         <BookContext.Provider value={
@@ -58,8 +56,6 @@ const Main = (props) =>{
             resultsCount, setResultsCount,
             queryGoogleAPIBookOthers,
             buttons, filterTitle
-           
-
             }
             
             }>

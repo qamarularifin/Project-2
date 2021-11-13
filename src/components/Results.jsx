@@ -12,12 +12,13 @@ const {searchTerm, searchResults, setSearchResults, fav, dispatchFav, filterTitl
 console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
-
+// console.log("searchResults: ", searchResults[0])
 
     
 //Google books results
 const images = searchResults.filter((ele)=>{
 
+    
     if (searchTerm === ""){
         
         return ele
@@ -26,10 +27,8 @@ const images = searchResults.filter((ele)=>{
     }
        
     }).map((ele, i) =>{
-
-        return(
         
-            <div className="results" key={i}>
+        return (<div className="results" key={i}>
     
                <img className="book-img" src={ ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail}  alt="" />
                 <div className="results-book">
@@ -66,13 +65,14 @@ const images = searchResults.filter((ele)=>{
     
                 </div>
                
-            </div>
-        )
+            </div>)
+        
+            
+        
     })
 
    
    
-
     return(
         <div className="results-overall">
             <h1>Results </h1>

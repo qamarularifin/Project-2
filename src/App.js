@@ -10,17 +10,19 @@ import Collapsible from './components/Collapsible'
 
 export default function App() {
     const [searchTerm, setSearchTerm] = useState("")
+    const [masterResult, setMasterResult] = useState([]) // master copy
     const [searchResults, setSearchResults] = useState([])
     const [disableSubmit, setDisableSubmit] = useState(true)
     const [resultsCount, setResultsCount] = useState(10)
 
     
     //filter
-    // const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories[0]))]
-    const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : ""))]
+  
+    // const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : ""))]
+    // const allCategories = ["All", ...searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category")]
   
 
-    const[buttons, setButtons] = useState(allCategories)
+    const[buttons, setButtons] = useState([])
    
 
     // useEffect(() => {
@@ -28,24 +30,20 @@ export default function App() {
     // }, [])
     
     console.log("searchResults", searchResults)
-    console.log("allcategories", allCategories)
+    // console.log("allcategories", allCategories)
     console.log("buttons", buttons)
     
-    const filterTitle = (button) =>{
-        if(button === "All"){
-            setSearchResults(searchResults)
-            return
-        }
-        const filteredData = searchResults.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined )
-        setSearchResults(filteredData)
-    }
+   
 
     //search by author
     const [searchOthers, setSearchOthers] = useState([])
 
+   
+
     const countRef = useRef()
 
     const queryGoogleAPIBook = async() =>{
+        console.log("triggered button")
 
         try{
         // Google Book apiKey
@@ -53,7 +51,13 @@ export default function App() {
         const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=${resultsCount}`)
         //const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`) //newyork best sellers
         const data = await response.json()
+        setMasterResult(data.items)
         setSearchResults(data.items)
+
+        const allCategories = ["All", ...new Set (data.items.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category"))]
+        setButtons(allCategories)
+        console.log("allcategories", allCategories)
+
 
         // console.log(data.items)
         }  
@@ -63,7 +67,37 @@ export default function App() {
     }
 
 
+    const filterTitle = (button) =>{
+        
+        if(button === "All"){
+            console.log("all", searchResults)
+            setSearchResults(masterResult)
+            return
+        }
+
+       
+            const filteredData = masterResult.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined )
+            console.log("filtered", searchResults)
+            setSearchResults(filteredData)
+
+     
+        
+
+        // 1st time search for cars
+        // searchResult -> ALL RESULT
+        // .... STORE ALL RESULT SOMEWHERE ELSE SUCH THAT THE CATEGORY WILL ALWAYS SEARCH WITHIN THIS VARIABLE 
+        // user click onc atergory sports car
+        //searchResult -> SPROTS CAR
+        // user click on Computer category
+        //......................
+        // tries to search in searchResultArry that contains [sprotscar]
+    }
+
+
+
+
     const queryGoogleAPIBookOthers = async() =>{
+        
 
         try{
         // Google Book apiKey
