@@ -1,10 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react'
 import Navigation from './components/Navigation'
 import Main from './components/Main'
-import Collapsible from './components/Collapsible'
-
-
-
 
 
 
@@ -26,10 +22,7 @@ export default function App() {
     const[buttons, setButtons] = useState([])
    
 
-    // useEffect(() => {
-    //     setButtons(allCategories)
-    // }, [])
-    
+   
     console.log("searchResults", searchResults)
     // console.log("allcategories", allCategories)
     console.log("buttons", buttons)
@@ -83,12 +76,6 @@ export default function App() {
     }
 
 
-
-
-
-
-
-
     const filterTitle = (button) =>{
         
         if(button === "All"){
@@ -117,7 +104,7 @@ export default function App() {
 
 
 
-
+    // good to have: to search for authors
     const queryGoogleAPIBookOthers = async() =>{
         
 
@@ -135,10 +122,7 @@ export default function App() {
         }
     }
 
-   
-
-
-
+ 
 
     return (
         <div className="App">
@@ -173,8 +157,7 @@ export default function App() {
 
                         />
 
-            
-            {/* <Collapsible /> */}
+         
         </div>
     )
 }
