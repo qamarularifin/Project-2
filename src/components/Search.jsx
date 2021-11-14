@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import {Link} from "react-router-dom"
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import { borderRadius } from '@mui/system';
 
 
 const Search = (props) =>{
@@ -12,10 +15,19 @@ const Search = (props) =>{
  
     return(
         <div className="search">
-            <form>
+            <Box
+                component="form"
+                sx={{
+                    width: 500, 
+                    maxWidth: "100%",
+                    margin: "0 auto",
+                    }} 
+                    autoComplete="off">
+                    
+
                 <div>
-                    <label></label>
-                    <input type="text" placeholder="Enter by title" onChange={handleChange}/>
+                    {/* <label></label> */}
+                    <TextField variant="filled" style={{backgroundColor: "white"}}  fullWidth label="Title" id="fullWidth"  type="text" placeholder="Enter by title" onChange={handleChange}/>
                     {/* <input type="text" placeholder="Enter by author" onChange={handleChange}/> */}
                     <Link to="/results"> <button type="submit" onClick={handleSubmit} disabled={disableSubmit}>Submit</button> </Link>
                     {/* <Link to="/results"> <button type="submit" onClick={handleSubmitOthers} disabled={disableSubmit}>Submit Others</button> </Link> */}
@@ -30,7 +42,7 @@ const Search = (props) =>{
                     </select>
                     </div>
                 </div>
-         </form>
+         </Box>
         </div>
 
 
