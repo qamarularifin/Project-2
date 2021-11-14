@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button'
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -45,7 +47,7 @@ const Navigation = (props) =>{
              <div className="nav-search">
                  <label></label>
                  <input type="text" placeholder="search" ref={titleRef} onChange={navHandleChange}/>
-                 <Link to="/results"> <button type="submit" onClick={navHandleSubmit} disabled={disableSubmit}>Enter</button> </Link>
+                 <Link to="/results"> <Button size="small" sx={{width:"1em"}} variant="outlined" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={navHandleSubmit} disabled={disableSubmit}></Button> </Link>
                  
              </div>
          </form>
