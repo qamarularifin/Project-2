@@ -4,7 +4,9 @@ import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import { borderRadius } from '@mui/system';
+import Button from '@mui/material/Button'
+import SearchIcon from '@mui/icons-material/Search';
+
 
 
 const Search = (props) =>{
@@ -29,7 +31,7 @@ const Search = (props) =>{
                     {/* <label></label> */}
                     <TextField variant="filled" style={{backgroundColor: "white"}}  fullWidth label="Title" id="fullWidth"  type="text" placeholder="Enter by title" onChange={handleChange}/>
                     {/* <input type="text" placeholder="Enter by author" onChange={handleChange}/> */}
-                    <Link to="/results"> <button type="submit" onClick={handleSubmit} disabled={disableSubmit}>Submit</button> </Link>
+                    <Link to="/results"> <Button variant="contained" color="primary" startIcon={<SearchIcon/>}  type="submit" onClick={handleSubmit} disabled={disableSubmit}>Search</Button> </Link>
                     {/* <Link to="/results"> <button type="submit" onClick={handleSubmitOthers} disabled={disableSubmit}>Submit Others</button> </Link> */}
                     {/* <input type="text" placeholder="No. of books (max: 40)"
                     ref={countRef} onChange={()=>setResultsCount(countRef.current.value)} /> */}
