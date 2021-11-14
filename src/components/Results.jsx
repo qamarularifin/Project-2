@@ -2,8 +2,11 @@ import React, {useState, useEffect} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
-import Button from './Button'
+import ButtonCat from './ButtonCat'
 import Spinner from './Spinner/Spinner'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+
 
  
 const Results = () =>{
@@ -14,8 +17,10 @@ const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
 const [loaded, setLoaded] = useState(false)
 
+
 useEffect(() => {
     setTimeout(setLoaded, 800, true)
+    
 }, [searchResults])
 
     
@@ -32,21 +37,43 @@ const images = searchResults.filter((ele)=>{
        
     }).map((ele, i) =>{
         
-        return (<div className="results" key={i}>
+        return (
+        
+          
+            <div className="results" key={i}>
     
                <img className="book-img" src={ ele.volumeInfo.imageLinks === undefined ? fallBack : ele.volumeInfo.imageLinks.thumbnail}  alt="" />
                 <div className="results-book">
                      <h3>{ele.volumeInfo ? ele.volumeInfo.title : ""}</h3>
                      
                      <div className="results-over">  {ele.volumeInfo ? ele.volumeInfo.description : ""}  </div>
-                        <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}><button>More Info</button> </a>
+                        <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}>
+                    
+                        <Button
+                            variant="contained"
+                            color="info"
+                            size="small"
+                        >More Info</Button> </a>
+
+
+
+
                     {
     
                         fav.some((p)=>p.id=== ele.id)?
-                            <button style={{backgroundColor: "red"}} onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</button>
+                            <Button 
+                                variant="contained"  
+                                size="small"
+                                color="error"
+                            
+                            onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</Button>
                             :
                             
-                            <button style={{backgroundColor: "green"}}
+                            <Button 
+                                variant="contained"
+                                size="small"
+                                color="success"
+
                                 onClick={()=>{
     
                                     dispatchFav({type:"ADDTOFAV", 
@@ -61,17 +88,28 @@ const images = searchResults.filter((ele)=>{
                     
                                           }
     
-                       })}} >Add to Fav</button>
+                       })}} >Add to Fav</Button>
     
                     }
                      
-                        <Link to={"/results/" + ele.id} ><button>Details</button></Link>
+                        <Link to={"/results/" + ele.id} >
+                        
+                        <Button
+                          
+                            variant="contained"
+                            size="small"
+                            color="inherit"
+
+                        >Details</Button>  </Link> 
     
                 </div>
                
-            </div>)
-        
+            </div>
+                 
             
+            )
+        
+          
         
     })
 
@@ -82,18 +120,18 @@ const images = searchResults.filter((ele)=>{
             <h1>Results </h1>
             {!loaded && <Spinner>Loading Results...</Spinner>}
 
-            <Button 
+            
+            <ButtonCat 
                 filterTitle={filterTitle}
                 buttons={buttons}
                 />
-               
-                     {/* <Filter 
-                        searchResults={searchResults}
-                        setSearchResults={setSearchResults} /> */}
+                
+            
+              
                  <div className="results-image">
                       {images.length < 1 ? <h1 className="results-empty">Results is Empty!</h1> : images} 
              </div>
-             
+            
         </div>
     )
 }

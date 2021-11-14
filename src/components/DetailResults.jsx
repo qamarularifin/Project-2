@@ -24,7 +24,7 @@ const DetailResults = () =>{
         <div className="details">
                 <div className="details-container">
                     <h1>{details[0].volumeInfo.title} </h1>
-                    <h2>{details[0].volumeInfo.authors[0]}</h2>
+                    <h2>{details[0].volumeInfo.authors ? details[0].volumeInfo.authors[0] : ""}</h2>
                     <img className="details-img" src={details[0].volumeInfo.imageLinks === undefined ? "" : details[0].volumeInfo.imageLinks.thumbnail}  alt="" />
                         <div className="details-book">
                             

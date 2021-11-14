@@ -3,11 +3,14 @@ import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 
 
+
 const Navigation = (props) =>{
     const {searchTerm, setSearchTerm, 
            disableSubmit, setDisableSubmit,
-           queryGoogleAPIBook, setSearchResults} = props
+           queryGoogleAPIBook} = props
     
+   
+
     const titleRef = useRef()
     const navigate = useNavigate()
 
