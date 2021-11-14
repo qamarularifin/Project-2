@@ -80,7 +80,7 @@ const images = searchResults.filter((ele)=>{
                                 size="small"
                                 color="success"
                                 startIcon={<FavoriteBorderIcon/>}
-                                // endIcon={}
+                                
 
                                 onClick={()=>{
     
