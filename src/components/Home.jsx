@@ -20,31 +20,32 @@ const breakPoints = [
 
 const Home = (props) =>{
 
-    const {searchBestResults, setSearchBestResults} = useContext(BookContext)
+    const {searchBestResults, setSearchBestResults, queryAPIBookBest} = useContext(BookContext)
     
     console.log("xxxxx", searchBestResults)
 
 
     useEffect(() => {
         queryAPIBookBest()
+       
    
     }, [])
 
         // New York Bestsellers API call
-        const queryAPIBookBest = async() =>{
+        // const queryAPIBookBest = async() =>{
 
-            try{
-            const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
-            const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
-            const data = await response.json()
-            //console.log(data.results.books)
-            setSearchBestResults(data.results.books)
-            }
-            catch (error){
-                console.log(error)
-            }
+        //     try{
+        //     const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
+        //     const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
+        //     const data = await response.json()
+        //     //console.log(data.results.books)
+        //     setSearchBestResults(data.results.books)
+        //     }
+        //     catch (error){
+        //         console.log(error)
+        //     }
            
-        }
+        // }
 
 
     return(

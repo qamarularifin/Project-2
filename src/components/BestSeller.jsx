@@ -6,7 +6,7 @@ import Spinner from './Spinner/Spinner'
 
 const BestSeller = (props) =>{
 
-    const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen, fav, dispatchFav} = useContext(BookContext)
+    const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen, fav, dispatchFav, queryAPIBookBest} = useContext(BookContext)
     const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
@@ -16,26 +16,29 @@ const BestSeller = (props) =>{
 
      console.log("best-results: ", searchBestResults)
  
-    // useEffect(() => {
-    //     queryAPIBookBest()
+    useEffect(() => {
+        queryAPIBookBest()
+        return ()=>{
+            console.log("clean up")
+        }
    
-    // }, [])
+    }, [])
 
     //     // New York Bestsellers API call
-    //     const queryAPIBookBest = async() =>{
+        // const queryAPIBookBest = async() =>{
 
-    //         try{
-    //         const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
-    //         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
-    //         const data = await response.json()
-    //         //console.log(data.results.books)
-    //         setSearchBestResults(data.results.books)
-    //         }
-    //         catch (error){
-    //             console.log(error)
-    //         }
+        //     try{
+        //     const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
+        //     const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
+        //     const data = await response.json()
+        //     //console.log(data.results.books)
+        //     setSearchBestResults(data.results.books)
+        //     }
+        //     catch (error){
+        //         console.log(error)
+        //     }
            
-    //     }
+        // }
 
         const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 

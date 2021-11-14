@@ -18,17 +18,18 @@ const Main = (props) =>{
     const {searchTerm, setSearchTerm, 
            searchResults, setSearchResults, 
            disableSubmit, setDisableSubmit,
-           queryGoogleAPIBook,
+           queryGoogleAPIBook, queryAPIBookBest,
            countRef,
            resultsCount, setResultsCount,
            queryGoogleAPIBookOthers,
-           buttons, filterTitle
+           buttons, filterTitle,
+           searchBestResults, setSearchBestResults
           } = props
 
                
 
 
-    const [searchBestResults, setSearchBestResults] = useState([])
+    
     const [isOpen, setIsOpen] = useState(false)
 
 
@@ -52,7 +53,7 @@ const Main = (props) =>{
             isOpen, setIsOpen,
             fav, dispatchFav,
             disableSubmit, setDisableSubmit,
-            queryGoogleAPIBook,
+            queryGoogleAPIBook, queryAPIBookBest,
             countRef,
             resultsCount, setResultsCount,
             queryGoogleAPIBookOthers,

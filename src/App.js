@@ -14,6 +14,7 @@ export default function App() {
     const [searchResults, setSearchResults] = useState([])
     const [disableSubmit, setDisableSubmit] = useState(true)
     const [resultsCount, setResultsCount] = useState(10)
+    const [searchBestResults, setSearchBestResults] = useState([])
 
     
     //filter
@@ -65,6 +66,27 @@ export default function App() {
             console.log(error)
         }
     }
+
+    const queryAPIBookBest = async() =>{
+
+        try{
+        const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
+        const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
+        const data = await response.json()
+        //console.log(data.results.books)
+        setSearchBestResults(data.results.books)
+        }
+        catch (error){
+            console.log(error)
+        }
+       
+    }
+
+
+
+
+
+
 
 
     const filterTitle = (button) =>{
@@ -136,9 +158,13 @@ export default function App() {
                         disableSubmit={disableSubmit}
                         setDisableSubmit={setDisableSubmit}
                         queryGoogleAPIBook={queryGoogleAPIBook}
+                        queryAPIBookBest={queryAPIBookBest}
                         countRef={countRef}
                         resultsCount={resultsCount}
                         setResultsCount={setResultsCount}
+
+                        searchBestResults={searchBestResults}
+                        setSearchBestResults={setSearchBestResults}
 
                         queryGoogleAPIBookOthers={queryGoogleAPIBookOthers}
 
