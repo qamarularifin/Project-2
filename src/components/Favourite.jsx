@@ -2,6 +2,10 @@ import React from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
+import Button from '@mui/material/Button'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import LinkIcon from '@mui/icons-material/Link';
 
 const Favourite = () =>{
     const {fav, dispatchFav} = useContext(BookContext)
@@ -12,15 +16,35 @@ const Favourite = () =>{
                 <div className="fav-book">
                     <h3 >{ele.title}</h3>
                     
-                    <div className="fav-over">  
-                        {ele.description}</div>
-                        <a target="_blank" href={ele.link}><button>More Info</button> </a>
-                    <button onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</button>
+                    <div className="fav-over"> {ele.description}</div>
 
-                    <Link to={"/favourite/" + ele.title} ><button>Details</button></Link>
+                    <div className="button-container">
+                        <a target="_blank" href={ele.link}>
+                        <Button
+                            variant="contained"
+                            color="info"
+                            size="small"
+                            startIcon={<LinkIcon/>}
+                        >Link</Button> </a>
+                    <Button 
+                        variant="contained"  
+                        size="small"
+                        color="error"
+                        startIcon={<FavoriteIcon/>}
+                    
+                    onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Del</Button>
+
+                    <Link to={"/favourite/" + ele.title} >
+                    
+                    <Button
+                         variant="contained"
+                        size="small"
+                        color="inherit"
+                        style={{marginLeft: "0.3em"}}
+                    >Info</Button></Link>
                         
+                    </div>
                 </div>
-
 
             </div>
         )
