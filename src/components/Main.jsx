@@ -1,17 +1,19 @@
-import React, {useState, useReducer, useEffect} from 'react'
+import React, {lazy, Suspense, useState, useReducer, useEffect} from 'react'
 import {Route, Routes, Navigate } from 'react-router-dom'
+import { BookContext } from '../contexts/dataContext'
 import BestSeller from './BestSeller'
 import Home from './Home'
 import About from './About'
 import Favourite from './Favourite'
 import Results from './Results'
-import { BookContext } from '../contexts/dataContext'
+
 import favReducer from '../reducers/favReducer'
 import DetailBest from './DetailBest'
 import DetailResults from './DetailResults'
 import DetailFavourite from './DetailFavourite'
 
 const Main = (props) =>{
+
 
     const {searchTerm, setSearchTerm, 
            searchResults, setSearchResults, 
@@ -25,8 +27,7 @@ const Main = (props) =>{
 
                
 
-    // const [searchTerm, setSearchTerm] = useState("")
-    // const [searchResults, setSearchResults] = useState([])
+
     const [searchBestResults, setSearchBestResults] = useState([])
     const [isOpen, setIsOpen] = useState(false)
 
@@ -65,8 +66,7 @@ const Main = (props) =>{
                 <Route  path="/bestseller" element={<BestSeller />}/>
                 <Route  path="/favourite"   element={<Favourite />} />
                 <Route  path="/about" element={<About />} />
-                <Route  path="/results" element={ <Results/>} />
-                
+                <Route  path="/results"  element={ <Results/> } />
                 <Route path="/bestseller/:detail" element={<DetailBest/>} />
                 <Route path="/results/:detail" element={<DetailResults/>} />
                 <Route path="/favourite/:detail" element={<DetailFavourite/>} />

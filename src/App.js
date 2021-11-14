@@ -75,14 +75,14 @@ export default function App() {
             return
         }
 
-       
+            //since filter is based on masterResult and masterResult state doesnt change, filtering masterResult will not cause the data to be edited permanently
             const filteredData = masterResult.filter(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] === button : undefined )
             console.log("filtered", searchResults)
-            setSearchResults(filteredData)
+            setSearchResults(filteredData) 
 
      
         
-
+        
         // 1st time search for cars
         // searchResult -> ALL RESULT
         // .... STORE ALL RESULT SOMEWHERE ELSE SUCH THAT THE CATEGORY WILL ALWAYS SEARCH WITHIN THIS VARIABLE 

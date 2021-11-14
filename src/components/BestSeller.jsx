@@ -2,12 +2,17 @@ import React, {useEffect, useState} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from "react-router-dom"
-import { getQueriesForElement } from '@testing-library/dom'
+import Spinner from './Spinner/Spinner'
 
 const BestSeller = (props) =>{
 
     const {searchTerm, setSearchTerm, searchBestResults, setSearchBestResults, isOpen, setIsOpen, fav, dispatchFav} = useContext(BookContext)
-    
+    const [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        setTimeout(setLoaded, 800, true)
+    }, [searchBestResults])
+
 
      console.log("best-results: ", searchBestResults)
  
@@ -92,6 +97,7 @@ const BestSeller = (props) =>{
     return (
         <div className="bestseller-overall">
             <h1>New York Best Seller</h1>
+            {!loaded && <Spinner>Loading Best Seller...</Spinner>}
                  <div className="bestseller-image">
                          {imagesBest}
                         

@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useContext } from 'react'
 import { BookContext } from '../contexts/dataContext'
 import {Link} from 'react-router-dom'
-import Filter from './Filter'
 import Button from './Button'
+import Spinner from './Spinner/Spinner'
 
  
 const Results = () =>{
@@ -12,7 +12,11 @@ const {searchTerm, searchResults, setSearchResults, fav, dispatchFav, filterTitl
 console.log("searchResults: ", searchResults)
 const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
-// console.log("searchResults: ", searchResults[0])
+const [loaded, setLoaded] = useState(false)
+
+useEffect(() => {
+    setTimeout(setLoaded, 800, true)
+}, [searchResults])
 
     
 //Google books results
@@ -76,6 +80,7 @@ const images = searchResults.filter((ele)=>{
     return(
         <div className="results-overall">
             <h1>Results </h1>
+            {!loaded && <Spinner>Loading Results...</Spinner>}
 
             <Button 
                 filterTitle={filterTitle}
