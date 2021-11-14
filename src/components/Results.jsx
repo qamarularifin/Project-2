@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom'
 import ButtonCat from './ButtonCat'
 import Spinner from './Spinner/Spinner'
 import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import LinkIcon from '@mui/icons-material/Link';
 
 
  
@@ -47,13 +49,16 @@ const images = searchResults.filter((ele)=>{
                      <h3>{ele.volumeInfo ? ele.volumeInfo.title : ""}</h3>
                      
                      <div className="results-over">  {ele.volumeInfo ? ele.volumeInfo.description : ""}  </div>
+
+                        <div className="button-container">
                         <a target="_blank" href={ele.volumeInfo.canonicalVolumeLink}>
                     
                         <Button
                             variant="contained"
                             color="info"
                             size="small"
-                        >More Info</Button> </a>
+                            startIcon={<LinkIcon/>}
+                        >Link</Button> </a>
 
 
 
@@ -65,14 +70,17 @@ const images = searchResults.filter((ele)=>{
                                 variant="contained"  
                                 size="small"
                                 color="error"
+                                startIcon={<FavoriteIcon/>}
                             
-                            onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>Remove</Button>
+                            onClick={()=>{dispatchFav({type: "REMOVEFROMFAV", payload: ele.id})}}>DEL</Button>
                             :
                             
                             <Button 
                                 variant="contained"
                                 size="small"
                                 color="success"
+                                startIcon={<FavoriteBorderIcon/>}
+                                // endIcon={}
 
                                 onClick={()=>{
     
@@ -88,7 +96,7 @@ const images = searchResults.filter((ele)=>{
                     
                                           }
     
-                       })}} >Add to Fav</Button>
+                       })}} >Fav</Button>
     
                     }
                      
@@ -99,9 +107,11 @@ const images = searchResults.filter((ele)=>{
                             variant="contained"
                             size="small"
                             color="inherit"
+                            style={{marginLeft: "0.3em"}}
 
-                        >Details</Button>  </Link> 
-    
+                        >INFO</Button>  </Link> 
+
+                    </div>
                 </div>
                
             </div>

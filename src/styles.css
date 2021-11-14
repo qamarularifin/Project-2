@@ -149,6 +149,10 @@ button {
   cursor: pointer;
 }
 
+.button-container {
+  padding: 1em;
+}
+
 a {
   text-decoration: none;
 }

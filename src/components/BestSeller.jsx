@@ -43,12 +43,7 @@ const BestSeller = (props) =>{
         const fallBack = 'https://cdn.browshot.com/static/images/not-found.png'
 
   
-        // const toggleSynopsis = ()=>{
-        //         setIsOpen(!isOpen)
-        //     }
-           
-     
-
+  
         const imagesBest = searchBestResults.map((ele, i)=>{
             return(
                 <div className="bestseller" key={i}>
