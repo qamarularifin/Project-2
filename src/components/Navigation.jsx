@@ -27,9 +27,15 @@ const Navigation = (props) =>{
     }
 
     const navHandleSubmit = (e) =>{
-        e.preventDefault()
-        navigate("/results")
-        queryGoogleAPIBook()
+        if (searchTerm === ""){
+            return 
+        } else{
+                e.preventDefault()
+                navigate("/results")
+                queryGoogleAPIBook()
+
+        }
+
  
     }
 
@@ -47,7 +53,7 @@ const Navigation = (props) =>{
              <div className="nav-search">
                  <label></label>
                  <input type="text" placeholder="search" ref={titleRef} onChange={navHandleChange}/>
-                 <Link to="/results"> <Button size="small" sx={{width:"1em"}} variant="outlined" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={navHandleSubmit} disabled={disableSubmit}></Button> </Link>
+                 <Link to="/results"> <Button size="small" sx={{width:"1em"}} variant="outlined" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={navHandleSubmit} ></Button> </Link>
                  
              </div>
          </form>

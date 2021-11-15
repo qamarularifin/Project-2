@@ -29,11 +29,16 @@ const SearchBox = () =>{
     }
 
     const handleSubmit = (e) =>{
-        e.preventDefault()
-        console.log("handleSubmit: clicked" )
-        setHasSearched(false)
-        navigate("/results")  
-        queryGoogleAPIBook()
+        if (searchTerm === ""){
+            return 
+        } else{
+            e.preventDefault()
+            console.log("handleSubmit: clicked" )
+            setHasSearched(false)
+            navigate("/results")  
+            queryGoogleAPIBook()
+        }
+
         
         
     }

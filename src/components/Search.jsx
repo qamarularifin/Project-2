@@ -31,7 +31,7 @@ const Search = (props) =>{
                     {/* <label></label> */}
                     <TextField variant="filled" style={{backgroundColor: "white"}}  fullWidth label="Title" id="fullWidth"  type="text" placeholder="Enter by title" onChange={handleChange}/>
                     {/* <input type="text" placeholder="Enter by author" onChange={handleChange}/> */}
-                    <Link to="/results"> <Button variant="contained" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={handleSubmit} disabled={disableSubmit}>Search</Button> </Link>
+                    <Link to="/results"> <Button variant="contained" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={handleSubmit} >Search</Button> </Link>
                     {/* <Link to="/results"> <button type="submit" onClick={handleSubmitOthers} disabled={disableSubmit}>Submit Others</button> </Link> */}
                     {/* <input type="text" placeholder="No. of books (max: 40)"
                     ref={countRef} onChange={()=>setResultsCount(countRef.current.value)} /> */}
