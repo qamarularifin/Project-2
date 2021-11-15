@@ -180,8 +180,8 @@ a {
 
 .details-book {
   max-width: 50%;
-  margin-left: 22em;
-  margin-top: -24em;
+  margin-left: 20em;
+  margin-top: -19em;
 }
 
 .details-container {
@@ -192,8 +192,12 @@ a {
   left: 0;
 }
 
+/* .details-img-book {
+  border: 1px solid black;
+} */
+
 .details-description {
-  margin-top: 2em;
+  margin-top: 10em;
 }
 
 .results-empty {

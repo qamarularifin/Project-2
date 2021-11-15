@@ -25,6 +25,8 @@ const DetailBest = () =>{
 
         <div className="details">
         <div className="details-container">
+
+            <div className="details-img-book">
             <img  className="details-img" src={details[0] === undefined ? "" : details[0].book_image}  alt="" />
             
                 
@@ -41,6 +43,8 @@ const DetailBest = () =>{
                         >Purchase</Button> </a>
                         
                             
+                    </div>
+
                     </div>
 
                     <div className="details-description">  
