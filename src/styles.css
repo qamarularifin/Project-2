@@ -173,17 +173,27 @@ a {
 }
 
 .details-img {
-  /* display: flex;
-  flex-wrap: wrap; */
-  width: 300px;
-  height: 400px;
+  width: 12em;
+  margin-right: 30em;
+  margin-top: 2em;
+}
+
+.details-book {
+  max-width: 50%;
+  margin-left: 22em;
+  margin-top: -24em;
 }
 
 .details-container {
   position: absolute;
+  /* display: flex; */
   right: 0;
   top: 0;
   left: 0;
+}
+
+.details-description {
+  margin-top: 2em;
 }
 
 .results-empty {
