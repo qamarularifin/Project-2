@@ -158,9 +158,9 @@ a {
 }
 
 .details {
-  background-color: rgba(83, 92, 95, 0.452);
+  background-color: #738385f8;
   border-radius: 3px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
   overflow: hidden;
   position: relative;
   margin: 0 auto;
@@ -173,15 +173,18 @@ a {
 }
 
 .details-img {
-  width: 12em;
+  width: 14.5em;
+  height: 17.5em;
+  padding: 2em 2em 2em 2em;
   margin-right: 30em;
   margin-top: 2em;
 }
 
 .details-book {
-  max-width: 50%;
+  max-width: 100%;
   margin-left: 20em;
   margin-top: -19em;
+  /* border: 1px solid black; */
 }
 
 .details-container {
@@ -197,7 +200,9 @@ a {
 } */
 
 .details-description {
-  margin-top: 10em;
+  margin-top: 4em;
+  padding: 1em 3em 3em 3em;
+  /* border: 1px solid black; */
 }
 
 .results-empty {

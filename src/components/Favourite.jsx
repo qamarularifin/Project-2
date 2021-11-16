@@ -59,7 +59,7 @@ const Favourite = () =>{
             <h1>Favourite</h1>
              
                  <div className="favourite-image">
-                         {/* {favItem} */}
+                     
                          {favItem.length < 1 ?  <h1 className="fav-empty">Favourite is Empty!</h1> : favItem}
                 </div>
                 

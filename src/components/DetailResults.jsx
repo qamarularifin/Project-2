@@ -26,12 +26,16 @@ const DetailResults = () =>{
         <div className="details">
                 <div className="details-container">
                     
+                <div className="details-img-book">
                     <img className="details-img" src={details[0].volumeInfo.imageLinks === undefined ? "" : details[0].volumeInfo.imageLinks.thumbnail}  alt="" />
                    
-                        
+                  
                         <div className="details-book">
-                         <h1>{details[0].volumeInfo.title} </h1>
-                         <h2>{details[0].volumeInfo.authors ? details[0].volumeInfo.authors[0] : ""}</h2>
+                         <h2>Title: {details[0].volumeInfo.title} </h2>
+                         <h3>Author: {details[0].volumeInfo.authors ? details[0].volumeInfo.authors[0] : ""}</h3>
+                         <h3>Publisher: {details[0].volumeInfo ? details[0].volumeInfo.publisher : ""}</h3>
+                         <h3>Rank: {details[0].volumeInfo ? details[0].volumeInfo.averageRating : ""}</h3> 
+                            
                             <a target="_blank" href={details[0].volumeInfo.canonicalVolumeLink}>
                             
                             <Button
@@ -41,9 +45,9 @@ const DetailResults = () =>{
                             startIcon={<ShopIcon/>}
                                 >Purchase</Button> </a>
                             
-                                
+                              </div>  
+                       
                         </div>
-
                         <div className="details-description">  
                                  Sypnosis: <br/>
                                <p> {details[0].volumeInfo ? details[0].volumeInfo.description : ""} </p>

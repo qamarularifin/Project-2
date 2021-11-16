@@ -92,7 +92,10 @@ const images = searchResults.filter((ele)=>{
                                     description: ele.volumeInfo ? ele.volumeInfo.description : "",
                                     link: ele.volumeInfo.canonicalVolumeLink,
                                     author: ele.volumeInfo.authors ? ele.volumeInfo.authors[0] : "",
-                                    id: ele.id
+                                    id: ele.id,
+                                    rank: ele.volumeInfo ? ele.volumeInfo.averageRating : "",
+                                    publisher: ele.volumeInfo ? ele.volumeInfo.publisher : ""
+                                    
                     
                                           }
     

@@ -31,9 +31,11 @@ const DetailBest = () =>{
             
                 
                     <div className="details-book">
-                        <h1 className="details-title">{details[0].title}</h1>
-                        <h2 className="details-author">{details[0].author}</h2>
-                        
+                        <h2 className="details-title">Title: {details[0].title}</h2>
+                        <h3 className="details-author">Author: {details[0].author}</h3>
+                        <h3 className="details-publisher">Publisher: {details[0].publisher}</h3>
+                        <h3 className="details-publisher">Rating: {details[0].rank}</h3>
+
                         <a  target="_blank" href={details[0].amazon_product_url}>
                         <Button
                             variant="contained"
