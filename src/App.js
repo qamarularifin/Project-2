@@ -11,7 +11,7 @@ export default function App() {
     const [disableSubmit, setDisableSubmit] = useState(true)
     const [resultsCount, setResultsCount] = useState(10)
     const [searchBestResults, setSearchBestResults] = useState([])
-
+    const [buttons, setButtons] = useState([])
     
     //filter
   
@@ -19,7 +19,7 @@ export default function App() {
     // const allCategories = ["All", ...searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category")]
   
 
-    const[buttons, setButtons] = useState([])
+    
    
 
    
