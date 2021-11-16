@@ -30,7 +30,7 @@ const DetailFavourite = () =>{
         <img className="details-img" src={details[0] === undefined ? "" : details[0].book_image}  alt="" />
                 
                 <div className="details-book">
-                <h2>Title: {details[0].title}</h2>
+                <h2>{details[0].title}</h2>
                 <h3>Author: {details[0].author}</h3>
                 <h3>Publisher: {details[0].publisher}</h3>
                 <h3>Rank: {details[0].rank}</h3>

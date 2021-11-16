@@ -31,7 +31,7 @@ const DetailBest = () =>{
             
                 
                     <div className="details-book">
-                        <h2 className="details-title">Title: {details[0].title}</h2>
+                        <h2 className="details-title">{details[0].title}</h2>
                         <h3 className="details-author">Author: {details[0].author}</h3>
                         <h3 className="details-publisher">Publisher: {details[0].publisher}</h3>
                         <h3 className="details-publisher">Rating: {details[0].rank}</h3>

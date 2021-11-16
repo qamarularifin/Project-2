@@ -31,7 +31,7 @@ const DetailResults = () =>{
                    
                   
                         <div className="details-book">
-                         <h2>Title: {details[0].volumeInfo.title} </h2>
+                         <h2>{details[0].volumeInfo.title} </h2>
                          <h3>Author: {details[0].volumeInfo.authors ? details[0].volumeInfo.authors[0] : ""}</h3>
                          <h3>Publisher: {details[0].volumeInfo ? details[0].volumeInfo.publisher : ""}</h3>
                          <h3>Rank: {details[0].volumeInfo ? details[0].volumeInfo.averageRating : ""}</h3> 
