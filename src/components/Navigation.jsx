@@ -46,14 +46,14 @@ const Navigation = (props) =>{
          <div className="nav-item"><Link to="/bestseller">New York Best Seller</Link></div>
          <div className="nav-item"><Link to="/results">Results</Link></div>
          <div className="nav-item"><Link to="/favourite">Favourite</Link></div>
-         <div className="nav-item" ><Link to="/about" >About </Link> </div>
+         {/* <div className="nav-item" ><Link to="/about" >About </Link> </div> */}
 
       
          
          <form>
              <div className="nav-search">
-                 <label></label>
-                 <input type="text" placeholder="search" ref={titleRef} onChange={navHandleChange}/>
+                 
+                 <input style={{borderRadius: "10px"}} type="text" placeholder="search" ref={titleRef} onChange={navHandleChange}/>
                  <Link to="/results"> <Button size="small" sx={{width:"1em"}} variant="outlined" color="error" startIcon={<SearchIcon/>}  type="submit" onClick={navHandleSubmit} ></Button> </Link>
                  
              </div>

@@ -167,6 +167,11 @@ img.favbook-img {
 .results:hover .results-over,
 .favourite:hover .fav-over {
   transform: translateX(0);
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  height: 300px;
+  padding: 1em;
 }
 
 button {
