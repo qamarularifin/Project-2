@@ -253,3 +253,9 @@ a {
   color: white;
   margin-top: 8em;
 }
+
+#dropdown-categories {
+  border-radius: 6px;
+  font-size: 0.6em;
+  background: linear-gradient(90deg, #e7e5e5 0%, rgb(68, 68, 124) 100%);
+}

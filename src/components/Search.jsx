@@ -35,14 +35,16 @@ const Search = (props) =>{
                     {/* <Link to="/results"> <button type="submit" onClick={handleSubmitOthers} disabled={disableSubmit}>Submit Others</button> </Link> */}
                     {/* <input type="text" placeholder="No. of books (max: 40)"
                     ref={countRef} onChange={()=>setResultsCount(countRef.current.value)} /> */}
-                    <div>
-                    <select name="option" onChange={(e) => setResultsCount(e.target.value)}>
-                        <option value="10" >10</option>
-                        <option value="20"  >20</option>
-                        <option value="30"  >30</option>
-                        <option value="40"  >40</option>
+                   
+            
+                <div class="select">
+                    <select name="dropdown-categories" id="dropdown-categories" onChange={(e) => setResultsCount(e.target.value)}>
+                        <option value="10" >Mini</option>
+                        <option value="40"  >Large</option>
+                      
                     </select>
                     </div>
+            
                 </div>
          </Box>
         </div>
