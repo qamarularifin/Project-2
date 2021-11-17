@@ -2,9 +2,7 @@
 
 ## Background
 
-Guess the color of hidden pegs. A deduction game where player
-makes a limited number of guesses,
-using logic to deduce what pegs were hidden.
+A book finder application where users are able to search for their favourite books based on the book title. The application also allows the user to favouritise their chosen book and allows the option for user to purchase it via a button that routes them to the actual book website.
 
 ## Link
 
@@ -60,6 +58,30 @@ using logic to deduce what pegs were hidden.
 
 ### Challenges working with Google Books API
 
-- There were instances where the results i.e, image is not found. Hence, the code needs to be mo
+- There were instances where the results from Google Books API i.e, image is not found. Hence, the code needs to be modified to add a ternary operator
+
+### Challenges working with multiple API (Google Books API and New York Best Seller API)
+
+- These two APIs have different key/value pairs which may not be easy to deal and manipulate with.
+- The challenge is when combining two different APIs into the favourite page as they both hold different key/value pairs.
+- This was resolved with the use of useReducer in which the payload key is defined to be the same for both APIs.
+
+### Challenges on working with the Fav/Del button
+
+- To get the button to toggle between Fav/Del is proved to be quite a challenge. A way to resolve this is to use a ternary operator with the array method .some.
+
+### Challenges on working with the filter by category in the results page
+
+- Stating of the initial state is important. Initial issue with the filter by category is that, the initial state was set as empty string. Hence, each time it renders, no results were seen. Hence, to resolve this, the initial state must be of certain values which in this case it the allCategories. But this allCategories need to be inside the queryGoogleAPIBook function.
+- Another issue encountered is each time a category is clicked, the searchResults become overwritten and lastly becomes no results. This is because the same searchResults was used to set state for setSearchResults. This causes the data to be overwritten. To resolve this, another state called masterResult was used which takes in the data.items. It is then used as the array to filter by category. Since the masterResult state is never changed, filtering this will not change the state of the masterResult and hence will be able to render all the results again when each category button is pressed.
+
+### Challenges working with the flow of data and where the state lives
+
+- Knowing where the states live is an important factor to consider when first starting to build the app. Initially, found an issue during implementing of the search feature in the navigation bar. Because the state lives further down, in the Main component, it was not possible to implement the search feature in the navigation bar. A way to do this is to lift the state up all the way to the App component. This way the main search and navigation search feature is able to get the data from the App component.
+- This was seen as an issue too when implementing the Carousel feature. Since the Carousel needs to use the api fetch to render the images on the carousel wheel, the API also needs to live in the App component that is further way up.
+- Hence lesson learnt that is it vital to know where the state and API lives as if it is implemented wrongly, re-writing the codes might not be so easy and can invite more bugs along the way.
 
 ## Good to have
+
+- Search books by author
+- Login for users. Each user able to favouritise his/her own favourite books based on their login account
