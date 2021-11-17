@@ -8,36 +8,58 @@ using logic to deduce what pegs were hidden.
 
 ## Link
 
-https://qamarularifin.github.io/Project-1/
-
 ## Technologies
 
 - React JS
 - Google Books API
 - New York Best Seller API
 - Material UI
+- Local Storage for Favourite page
 
-## Minimum requirement
+## Features
 
-1. Choose color from the selector pegs
-2. Paint the guess pegs one row at a time
-3. Other rows must not be able to be painted
-4. A check button required to move on to the next row
-5. A correct guess peg and correct position will be painted as red in the result peg box
-6. A correct guess peg and wrong position will be painted as gray in the result peg box
-7. A wrong guess peg and wrong position will not return any color
-8. Answer pegs will be randomly generated and hidden
-9. Answer pegs will be shown only after the game is over
-10. An indication to show if the user has won or lost the game
+### Google Book Finder page (Homepage)
 
-### Struggles
+1. Allow users to search book title based on the google books API
+2. Users can select search based on mini search (10 results) or large search (40 results)
+3. Best Seller carousel allows user to view new york best seller books
 
-- Determining how to move to the next row
-- How to prevent the next row buttons from being clicked
-- How to compare the guesses with the answers algorithm (converting the colors into integers instead)
-- Creating algorithm to determine the gray pegs (correct color, wrong position). Initially, using .includes did not work as it does not cater for repeated numbers in the guess and answer array. Need to come up with a method which cancels out those guess and answers which have been checked. This is done by re-assigning the numbers as a string such as "x"
+### Results page
 
-### Good to have
+1. Results page shows the result searches based on google books API
+2. Users are able to filter by category in the results page via the buttons located above the books
+3. Each book card consists of link, fav and info button
+4. Link button will lead the user to the actual link page of the book
+5. Fav button will favouritise user's selected book to the favourite page
+6. Info button will lead the user to a details page of the book where it shows the title, author, publisher, rank and sypnopsis of the book. Also includes a purchase button which links user to the actual link page of the book
+7. Upon hovering over of each book card, a synopsis of the book will be shown
 
-- A scoring system with local storage that can save the points scored
-- Changing the difficulty level i.e, 5 guess pegs instead of 4 guess pegs
+### New York Best Seller page
+
+1. New York Best Seller page shows the results based on new york best seller books API
+2. Each book card consists of link, fav and info button
+3. Link button will lead the user to the actual link page of the book
+4. Fav button will favouritise user's selected book to the favourite page
+5. Info button will lead the user to a details page of the book where it shows the title, author, publisher, rank and sypnopsis of the book. Also includes a purchase button which links user to the actual link page of the book
+
+### Favourite page
+
+1. Favourite page shows the favouritised results from either results page or new york best seller page or both
+2. Each book card consists of link, delete and info button
+3. Link button will lead the user to the actual link page of the book
+4. Delete button will remove user's selected book from the favourite page
+5. Info button will lead the user to a details page of the book where it shows the title, author, publisher, rank and sypnopsis of the book. Also includes a purchase button which links user to the actual link page of the book
+6. The favourite page results uses local storage which will remember the user's saved data if the browser was closed
+
+### Additional Features
+
+1. Upon clicking the fav button on either the New York Best Seller page or Results page, the button will toggle to del button. User is then able to del his/her favourite from either the New York Best Seller page or Results page or at the Favourite page itself
+2. User can utilize the search bar located at the top right hand side of the navigation bar for quick search of their books without needing to return to the homepage
+
+## Struggles
+
+### Challenges working with Google Books API
+
+- There were instances where the results i.e, image is not found. Hence, the code needs to be mo
+
+## Good to have
