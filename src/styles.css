@@ -137,6 +137,7 @@ img.favbook-img {
   position: relative;
   margin: 1rem;
   width: 250px;
+  height: 22em;
   transition: transform 0.2s;
 }
 
@@ -181,6 +182,9 @@ button {
 
 .button-container {
   padding: 1em;
+
+  position: absolute;
+  bottom: 0px;
 }
 
 a {
@@ -263,4 +267,10 @@ a {
   border-radius: 6px;
   font-size: 0.6em;
   background: linear-gradient(90deg, #e7e5e5 0%, rgb(68, 68, 124) 100%);
+}
+
+.results-book h3,
+.best-book h3,
+.fav-book h3 {
+  margin: 0 auto;
 }
