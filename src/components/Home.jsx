@@ -31,21 +31,7 @@ const Home = (props) =>{
    
     }, [])
 
-        // New York Bestsellers API call
-        // const queryAPIBookBest = async() =>{
-
-        //     try{
-        //     const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
-        //     const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
-        //     const data = await response.json()
-        //     //console.log(data.results.books)
-        //     setSearchBestResults(data.results.books)
-        //     }
-        //     catch (error){
-        //         console.log(error)
-        //     }
-           
-        // }
+ 
 
 
     return(

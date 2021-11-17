@@ -13,16 +13,7 @@ export default function App() {
     const [searchBestResults, setSearchBestResults] = useState([])
     const [buttons, setButtons] = useState([])
     
-    //filter
-  
-    // const allCategories = ["All", ...new Set(searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : ""))]
-    // const allCategories = ["All", ...searchResults.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category")]
-  
 
-    
-   
-
-   
     console.log("searchResults", searchResults)
     // console.log("allcategories", allCategories)
     console.log("buttons", buttons)
