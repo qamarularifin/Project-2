@@ -68,6 +68,7 @@ A book finder application where users are able to search for their favourite boo
 
 ### Challenges on working with the Fav/Del button
 
+- The goal is to be able to favouritize a book without duplication. This can be done via toggling the button as Fav and Del.
 - To get the button to toggle between Fav/Del is proved to be quite a challenge. A way to resolve this is to use a ternary operator with the array method .some.
 
 ### Challenges on working with the filter by category in the results page
