@@ -27,17 +27,23 @@ useEffect(() => {
 
     
 //Google books results
-const images = searchResults.filter((ele)=>{
+const images = searchResults
+
+
+    //     .filter((ele)=>{
 
     
-    if (searchTerm === ""){
+    // if (searchTerm === ""){
         
-        return ele
-    } else if( ele.volumeInfo.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return ele
-    }
+    //     return ele
+    // } else if( ele.volumeInfo.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+    //     return ele
+    // }
        
-    }).map((ele, i) =>{
+    // })
+    
+    
+    .map((ele, i) =>{
         
         return (
         

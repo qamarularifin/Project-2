@@ -274,3 +274,9 @@ a {
 .fav-book h3 {
   margin: 0 auto;
 }
+
+.author {
+  border-radius: 6px;
+  font-size: 0.6em;
+  background: whitesmoke;
+}

@@ -18,12 +18,14 @@ export default function App() {
     console.log("searchResults", searchResults)
     // console.log("allcategories", allCategories)
     console.log("buttons", buttons)
+
+    useEffect(() => {
+        
+        return () => {
+            console.log("cleanup app")
+        }
+    }, [searchTerm])
     
-   
-
-    //search by author
-    const [searchOthers, setSearchOthers] = useState([])
-
    
 
     const countRef = useRef()
@@ -35,7 +37,6 @@ export default function App() {
         // Google Book apiKey
         const apiKey = 'AIzaSyDeqdtT7Yzm3EyJeWrqZfVoWcITn2Mohj8' 
         const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=${resultsCount}`)
-        //const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`) //newyork best sellers
         const data = await response.json()
         setMasterResult(data.items)
         setSearchResults(data.items)
@@ -43,7 +44,6 @@ export default function App() {
         const allCategories = ["All", ...new Set (data.items.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category"))]
         setButtons(allCategories)
         console.log("allcategories", allCategories)
-
 
         // console.log(data.items)
         }  
@@ -58,7 +58,6 @@ export default function App() {
         const apiKey2 = 'shSl6iPGIgUC7v5kkRnkPY2NbtpruQU8'  //newyork best sellers
         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey2}`)
         const data = await response.json()
-        //console.log(data.results.books)
         setSearchBestResults(data.results.books)
         }
         catch (error){
@@ -81,9 +80,7 @@ export default function App() {
             console.log("filtered", searchResults)
             setSearchResults(filteredData) 
 
-     
-        
-        
+    
         // 1st time search for cars
         // searchResult -> ALL RESULT
         // .... STORE ALL RESULT SOMEWHERE ELSE SUCH THAT THE CATEGORY WILL ALWAYS SEARCH WITHIN THIS VARIABLE 
@@ -97,15 +94,20 @@ export default function App() {
 
 
     // good to have: to search for authors
-    const queryGoogleAPIBookOthers = async() =>{
+    const queryGoogleAPIBookOthers = async(search) =>{
         
 
         try{
         // Google Book apiKey
         const apiKey = 'AIzaSyDeqdtT7Yzm3EyJeWrqZfVoWcITn2Mohj8' 
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${searchTerm}&maxResults=${resultsCount}`)
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${search}&maxResults=${resultsCount}`)
         const data = await response.json()
+        setMasterResult(data.items)
         setSearchResults(data.items)
+
+        const allCategories = ["All", ...new Set (data.items.map(item => item.volumeInfo.categories ? item.volumeInfo.categories[0] : "No category"))]
+        setButtons(allCategories)
+        console.log("allcategories", allCategories)
 
         console.log(data.items)
         }  
