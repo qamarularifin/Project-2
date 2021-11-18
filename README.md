@@ -6,6 +6,8 @@ A book finder application where users are able to search for their favourite boo
 
 ## Link
 
+https://qamarularifin.github.io/Project-2"
+
 ## Technologies
 
 - React JS
