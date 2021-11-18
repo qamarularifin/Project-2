@@ -84,5 +84,4 @@ A book finder application where users are able to search for their favourite boo
 
 ## Good to have
 
-- Search books by author
 - Login for users. Each user able to favouritise his/her own favourite books based on their login account
