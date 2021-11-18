@@ -279,4 +279,36 @@ a {
   border-radius: 6px;
   font-size: 0.6em;
   background: whitesmoke;
+  width: 30em;
+  height: 2em;
+  padding: 8px 20px;
+  margin: 6px 0;
+}
+
+.toggle {
+  margin: 10em;
+}
+
+/* .collapsible .toggle {
+  background: #0084ff;
+  border: unset;
+  cursor: pointer;
+  font: unset;
+  padding: 0.3em;
+  border-radius: 5px;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+} */
+
+.collapsible .content {
+  /* padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 5px; */
+  height: 0px;
+  overflow: hidden;
+  transition: height ease 0.7s;
+}
+
+.collapsible .content.show {
+  height: 100px;
 }
